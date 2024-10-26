@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     return (
-        <div className='min-h-screen flex justify-center items-center'>
-            <div className="card bg-red-600 text-white w-96 shadow-xl">
+        <div className='min-h-screen  w-96 mx-auto '>
+            <div className="card bg-red-600 text-white w-96 shadow-xl mt-20">
                 
                 <div className="card-body items-center text-center">
                     
