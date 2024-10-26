@@ -5,6 +5,7 @@ import html2pdf from 'html2pdf.js';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 
 const FormDetail = () => {
+    window.scrollTo(0, 0);
     const axiosPublic = useAxiosPublic();
     const { id } = useParams();
     const { data: nominee = {} } = useQuery({
@@ -19,6 +20,10 @@ const FormDetail = () => {
         window.print(); // This triggers the browser's print dialog
     };
 
+    let randomNum1 = id.slice(4, 5).toUpperCase();
+    let randomNum2 = id.slice(5, 6).toUpperCase();
+    let randomNum3 = id.slice(6, 7).toUpperCase();
+    let randomNum4 = id.slice(7, 8).toUpperCase();
 
 
     return (
@@ -38,7 +43,7 @@ const FormDetail = () => {
                             />
                         </div>
                         <div>
-                            <p className="text-sm font-bold">{ nominee?.verification }</p>
+                            <p className="text-sm font-bold">{nominee?.verification}</p>
                         </div>
                     </div>
 
@@ -155,8 +160,8 @@ const FormDetail = () => {
                         <div className="w-1/4"></div>
                         <div className="w-3/4 font-semibold overflow-hidden">
                             <p className="">{`V<AL<<${nominee?.serName}<<<<<<<${nominee?.name}`}<span className='font-extrabold'>{`<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`}</span></p>
-                            <p className="">{`AL< <${nominee?.passportNo} <<<BDA17353108<<<<<<M3 2 3 1 6 0 7<<<<<<<<<<<<<<<`}</p>
-                            <p className="font-extrabold">{`< 1 001 1 6 1 3B G D <<<<<<<<<<<<<<<<<< 1 3 6C 25 <<<<<<<<<<<<<`}</p>
+                            <p className="">{`AL< <${nominee?.passportNo} <<<BDA53108${randomNum1}<<<<<<M3 2 6 0 ${randomNum2}<<<<<<<<<<<<<<<`}</p>
+                            <p className="font-extrabold">{`< 1 ${randomNum3}1 1 6 1 3B G D <<<<<<<<<<<<<<<<<< 1 ${randomNum4}3 6C 54 <<<<<<<<<<<<<`}</p>
                         </div>
                     </div>
 
@@ -196,8 +201,8 @@ const FormDetail = () => {
 
 
             <div className="bg-blue-600 w-32 mb-32 p-3 mx-auto rounded-lg text-white text-center ">
-            <button onClick={handlePrint}>Print Page</button>
-           </div>
+                <button onClick={handlePrint}>Print Page</button>
+            </div>
 
         </>
     );
