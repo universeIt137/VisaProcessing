@@ -79,7 +79,7 @@ const ManPowerForm = () => {
 
   }
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center min-h-screen  py-8 px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-4xl">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-800 text-center mb-6">
           Upload Nominee Data
@@ -161,7 +161,7 @@ const ManPowerForm = () => {
 
           <p className="text-lg font-semibold my-5 ">BMET Smart Card Information</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
             {/* Name */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
@@ -236,7 +236,7 @@ const ManPowerForm = () => {
           {/* PDO Certificate Information */}
           <p className="text-lg font-semibold mb-4 mt-6">PDO Certificate Information</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
             {/* Name */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="pdoName">
@@ -310,7 +310,7 @@ const ManPowerForm = () => {
           {/* BMET Registration Information */}
           <p className="text-lg font-semibold mb-4 mt-6">BMET Registration Information</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
             {/* Name */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bmetName">
@@ -370,7 +370,7 @@ const ManPowerForm = () => {
 
           <p className="text-lg font-semibold mb-4 mt-6">Passport Information</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
             {/* Name */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="passName">
