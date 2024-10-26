@@ -48,7 +48,7 @@ const ManPowerTable = () => {
                   <img
                     src={item?.img || 'https://via.placeholder.com/50'}
                     alt={item?.name || 'Placeholder'}
-                    className="rounded-full w-12"
+                    className="rounded-full w-12 h-12 "
                   />
                 </td>
                 <td className="py-3 px-4 border-b">{item?.passNo}</td>
