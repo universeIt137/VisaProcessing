@@ -3,62 +3,33 @@ import React from 'react';
 const ClearancePage = () => {
     return (
         <div>
-            <div className='w-1/3 mx-auto'>
-                {/* <div className=" shadow-lg rounded-xl">
+            <div className='lg:w-[600px] mx-auto px-5'>
+                
 
-
-                    <div className=" flex justify-around py-5">
-                        <div className="">
-                            <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729935951/Other%20data/g2ix09qhbjmeyan8m2jw.jpg" alt="" className=' border border-black size-36 mx-auto rounded-lg' />
-                        </div>
-                        <div className="space-y-1">
-                            <div className="">
-                                <p className='font-semibold text-[12px]'>Name:</p>
-                                <p className='uppercase font-bold text-[14px]'>md shakawat akbar</p>
-                            </div>
-                            <div className="">
-                                <p className='font-semibold text-[12px]'>Passport Number:</p>
-                                <p className='uppercase font-bold text-[14px]'>A2234234DFD</p>
-                            </div>
-                            <div className="">
-                                <p className='font-semibold text-[12px]'>Visa Number:</p>
-                                <p className='uppercase font-bold text-[14px]'>A2234234DFD</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-
-
-
-
-                </div> */}
-
-                <div className=" mx-auto bg-white rounded-lg shadow-md p-10 flex items-center space-x-4">
-                    <div>
+                <div className=" mx-auto bg-white rounded-lg p-4 lg:flex lg:gap-4 py-5 lg:mt-10 shadow-lg">
+                    <div className=' flex justify-center mx-auto'>
                         <img
                             src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729935951/Other%20data/g2ix09qhbjmeyan8m2jw.jpg" // Replace with your image URL
                             alt="Profile"
-                            className="w-32 rounded-md border border-gray-300 object-cover"
+                            className=" rounded-md border border-black size-28 lg:size-40"
                         />
                     </div>
-                    <div className="flex-1">
-                        <h2 className="text-2xl font-semibold text-teal-700">MD SHAWKAT AKBAR</h2>
-                        <div className="mt-2 text-xl text-gray-600 space-y-1">
-                            <div className="flex justify-between">
+                    <div className="lg:w-2/3">
+                        <h2 className=" text-[20px] text-center lg:text-start lg:text-3xl font-semibold text-gray-500">MD SHAWKAT AKBAR</h2>
+                        <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2">
+                            <div className="flex justify-between border-b border-dashed border-teal-800 lg:py-1">
                                 <span>Passport No</span>
-                                <span className="font-semibold text-gray-800">A13378486</span>
+                                <span className="font-semibold text-teal-900">A13378486</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between border-b border-dashed border-teal-800 lg:py-1">
                                 <span>P. Issue Date</span>
                                 <span className="font-semibold text-gray-800">2023-12-17</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between border-b  border-gray-300 lg:py-1">
                                 <span>Date of Birth</span>
                                 <span className="font-semibold text-gray-800">1987-05-25</span>
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between lg:py-1">
                                 <span>Visa No.</span>
                                 <span className="font-semibold text-gray-800">AL0005721e</span>
                             </div>
@@ -66,86 +37,175 @@ const ClearancePage = () => {
                     </div>
                 </div>
 
-                <div className="border-b-2 my-10 border-[#1a7a86] rounded-xl">
-                    <div className="bg-gradient-to-r from-[#1a7a86] to-[#7269c5] rounded-t-xl">
-                        <div className="flex justify-around items-center   py-4">
+                <div className="border-b-2 my-10 border-[#1a7a86] rounded-xl shadow-lg">
+                    <div className="bg-[#c8d3e5] rounded-t-xl">
+                        <div className="flex justify-between items-center p-4">
                             <div className="">
-                                <p className="text-xl text-white">BMET Smart Card</p>
+                                <p className="lg:text-2xl text-[#032b87] font-semibold">BMET Smart Card</p>
                             </div>
                             <div className="flex gap-2">
                                 <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/wqytnw8nhwxghgsl8wrh.png" alt="" className='w-10' />
                                 <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/ag8cmhvvvdkmzmlbzhbw.png" alt="" className='w-10' />
                             </div>
                         </div>
-                        <p className='text-white ml-[30px] lg:ml-[60px] -mt-3 pb-5'>Clearance ID: AL-I-2024-4000100</p>
                     </div>
+                    <div className="">
 
-                    <div className=" flex justify-around  py-10">
-                        <div className="">
-                            <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1724761417/LMS/lt7agjgd15ok2ktoquow.png" alt="" className=' border w-2/3 mx-auto rounded-lg' />
-                        </div>
-                        <div className="mr-[10px] space-y-1">
-                            <div className="">
-                                <p className='font-semibold text-[12px]'>Name:</p>
-                                <p className='uppercase font-bold text-[14px]'>md shakawat akbar</p>
+                        <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Name</span>
+                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
                             </div>
-                            <div className="">
-                                <p className='font-semibold text-[12px]'>Passport Number:</p>
-                                <p className='uppercase font-bold text-[14px]'>A2234234DFD</p>
+                            <div className="flex justify-between border-b-2 border-dashed border-blue-900 lg:py-3">
+                                <span>Clearance ID</span>
+                                <span className="font-semibold text-gray-500">AL-I-2024-4000100</span>
                             </div>
-                            <div className="">
-                                <p className='font-semibold text-[12px]'>Visa Number:</p>
-                                <p className='uppercase font-bold text-[14px]'>A2234234DFD</p>
+                            <div className="flex justify-between border-b-2 border-dashed  border-blue-900 lg:py-3">
+                                <span>Visa No</span>
+                                <span className="font-semibold text-gray-500">AL0005721e</span>
                             </div>
-
-                        </div>
-                    </div>
-
-                    <div className="border-b-2 border-black flex gap-5 px-4 mx-4 my-2">
-                        <div className=" w-1/2">
-                            <p className="text-[12px]">Father:</p>
-                            <p className='uppercase font-bold text-[12px] lg:text-[14px]'>md shakawat akbar</p>
-                        </div>
-                        <div className=" w-1/2">
-                            <p className='text-[12px]'>Mother:</p>
-                            <p className='uppercase font-bold text-[12px] lg:text-[14px]'>md shakawat akbar</p>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Employer</span>
+                                <span className="font-semibold text-gray-500">Sumitomo Corporation</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Country</span>
+                                <span className="font-semibold text-gray-500">Albania</span>
+                            </div>
                         </div>
                     </div>
 
 
-                    <div className="border-b-2 border-black flex gap-4 px-4 mx-4 my-2">
-                        <div className="w-1/2">
-                            <p className='text-[12px]'>BRA ID:</p>
-                            <p className='uppercase font-bold text-[12px] lg:text-[14px]'></p>
-                        </div>
-                        <div className="w-1/2">
-                            <p className='text-[12px]'>Employer:</p>
-                            <p className='uppercase font-bold text-[10px] lg:text-[12px]'>sumitomono Corporation</p>
-                        </div>
-                    </div>
 
-                    <div className="border-b-2 border-black flex gap-5 px-4 mx-4 my-2">
-                        <div className="w-1/2">
-                            <p className='text-[12px]'>Job:</p>
-                            <p className='uppercase font-bold text-[12px] lg:text-[14px]'>General Worker</p>
-                        </div>
-                        <div className="w-1/2">
-                            <p className='text-[12px]'>Country:</p>
-                            <p className='uppercase font-bold text-[12px] lg:text-[14px]'>Albania</p>
-                        </div>
-                    </div>
-
-                    <div className="border-b-2 border-black flex gap-5 px-4 mx-4 my-2 mb-10">
-                        <div className="w-1/2">
-                            <p className='text-[12px]'>Passport Issue Date:</p>
-                            <p className='uppercase font-bold text-[12px] lg:text-[14px]'>17 Dec 2024</p>
-                        </div>
-                        <div className="w-1/2">
-                            <p className='text-[12px]'>Clearance Date:</p>
-                            <p className='uppercase font-bold text-[12px] lg:text-[14px]'>17 Dec 2023</p>
-                        </div>
-                    </div>
                 </div>
+
+                <div className="border-b-2 my-10 border-[#1a7a86] rounded-xl shadow-lg">
+                    <div className="bg-[#CBE6D6] rounded-t-xl">
+                        <div className="flex justify-between items-center   p-4">
+                            <div className="">
+                                <p className="lg:text-2xl text-[#008638] font-semibold">
+                                    PDO Certificate</p>
+                            </div>
+                            <div className="flex gap-2">
+                                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/wqytnw8nhwxghgsl8wrh.png" alt="" className='w-10' />
+                                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/ag8cmhvvvdkmzmlbzhbw.png" alt="" className='w-10' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="">
+
+                        <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Name</span>
+                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Certificate No</span>
+                                <span className="font-semibold text-gray-500">8689570</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Country</span>
+                                <span className="font-semibold text-gray-500">Albania</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>TTC</span>
+                                <span className="font-semibold text-gray-500">Technical Training Center, Kushtia</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Issue Date</span>
+                                <span className="font-semibold text-gray-500">2024-06-26</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div className="border-b-2 my-10 border-[#30a55f] rounded-xl shadow-lg">
+                    <div className="bg-[#CBE6D6] rounded-t-xl">
+                        <div className="flex justify-between items-center   p-4">
+                            <div className="">
+                                <p className="lg:text-2xl text-[#00749a] font-semibold">
+                                    BMET Registration</p>
+                            </div>
+                            <div className="flex gap-2">
+                                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/wqytnw8nhwxghgsl8wrh.png" alt="" className='w-10' />
+                                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/ag8cmhvvvdkmzmlbzhbw.png" alt="" className='w-10' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="">
+
+                        <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Name</span>
+                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>BMET No</span>
+                                <span className="font-semibold text-gray-500">KUM20240184666G</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Birth Date</span>
+                                <span className="font-semibold text-gray-500">1987-05-25</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Issue Date</span>
+                                <span className="font-semibold text-gray-500">2024-06-12
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div className="border-b-2 my-10 border-[#30a55f] rounded-xl shadow-lg">
+                    <div className="bg-[#C1D6CD] rounded-t-xl">
+                        <div className="flex justify-between items-center   p-4">
+                            <div className="">
+                                <p className="lg:text-2xl text-[#3a7a61] font-semibold">
+
+                                    Passport</p>
+                            </div>
+                            <div className="flex gap-2">
+                                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/wqytnw8nhwxghgsl8wrh.png" alt="" className='w-10' />
+                                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/ag8cmhvvvdkmzmlbzhbw.png" alt="" className='w-10' />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="">
+
+                        <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Name</span>
+                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Passport No</span>
+                                <span className="font-semibold text-gray-500">A13378486</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Passport Issue Date</span>
+                                <span className="font-semibold text-gray-500">17 Dec 2023</span>
+                            </div>
+                            <div className="flex justify-between border-b  border-gray-200 lg:py-3">
+                                <span>Passport Expiry Date</span>
+                                <span className="font-semibold text-gray-500">16 Dec 2033
+
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
             </div>
         </div>
     );
