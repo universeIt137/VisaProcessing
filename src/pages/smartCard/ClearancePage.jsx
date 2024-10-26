@@ -1,37 +1,47 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import manPowerStore from '../../api-request/manPowerApi';
+import { useParams } from 'react-router-dom';
 
 const ClearancePage = () => {
+    window.scrollTo(0, 0);
+    const {singleManPowerDataApi,singleManPowerData} = manPowerStore();
+    const {id} = useParams();
+    useEffect(()=>{
+        (async()=>{
+            await singleManPowerDataApi(id);
+        })()
+    },[id])
     return (
         <div>
             <div className='lg:w-[600px] mx-auto px-5'>
                 
 
-                <div className=" mx-auto bg-white rounded-lg p-4 lg:flex lg:gap-4 py-5 lg:mt-10 shadow-lg">
+                <div className=" mx-auto bg-white rounded-lg p-4 lg:flex lg:gap-4 shadow-2xl">
                     <div className=' flex justify-center mx-auto'>
                         <img
-                            src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729935951/Other%20data/g2ix09qhbjmeyan8m2jw.jpg" // Replace with your image URL
+                            src= { singleManPowerData?.img } // Replace with your image URL
                             alt="Profile"
-                            className=" rounded-md border border-black size-28 lg:size-40"
+                            className=" rounded-md border border-black size-28 lg:w-32 lg:h-40"
                         />
                     </div>
                     <div className="lg:w-2/3">
-                        <h2 className=" text-[20px] text-center lg:text-start lg:text-3xl font-semibold text-gray-500">MD SHAWKAT AKBAR</h2>
-                        <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2">
+                        <h2 className=" text-[20px] text-center lg:text-start lg:text-3xl font-semibold text-[#157E7D]">{singleManPowerData?.name}</h2>
+                        <div className="mt-2 lg:text-[21px] space-y-2">
                             <div className="flex justify-between border-b border-dashed border-teal-800 lg:py-1">
-                                <span>Passport No</span>
-                                <span className="font-semibold text-teal-900">A13378486</span>
+                                <span className='text-[#666687]'>Passport No</span>
+                                <span className="font-semibold text-[#4A4A6A]"> { singleManPowerData?.passNo } </span>
                             </div>
                             <div className="flex justify-between border-b border-dashed border-teal-800 lg:py-1">
-                                <span>P. Issue Date</span>
-                                <span className="font-semibold text-gray-800">2023-12-17</span>
+                                <span className='text-[#666687]'>P. Issue Date</span>
+                                <span className="font-semibold text-[#4A4A6A]"> { singleManPowerData?.pIssueDate } </span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-300 lg:py-1">
-                                <span>Date of Birth</span>
-                                <span className="font-semibold text-gray-800">1987-05-25</span>
+                                <span className='text-[#666687]'>Date of Birth</span>
+                                <span className="font-semibold text-[#4A4A6A]"> { singleManPowerData?.userBirthDate } </span>
                             </div>
                             <div className="flex justify-between lg:py-1">
-                                <span>Visa No.</span>
-                                <span className="font-semibold text-gray-800">AL0005721e</span>
+                                <span className='text-[#666687]'>Visa No.</span>
+                                <span className="font-semibold text-[#4A4A6A]"> { singleManPowerData?.VisaNo } </span>
                             </div>
                         </div>
                     </div>
@@ -53,24 +63,24 @@ const ClearancePage = () => {
 
                         <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Name</span>
-                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
+                                <span className='text-[#666687]'>Name</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.name }</span>
                             </div>
                             <div className="flex justify-between border-b-2 border-dashed border-blue-900 lg:py-3">
-                                <span>Clearance ID</span>
-                                <span className="font-semibold text-gray-500">AL-I-2024-4000100</span>
+                                <span className='text-[#666687]'>Clearance ID</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.BclearanceId } </span>
                             </div>
                             <div className="flex justify-between border-b-2 border-dashed  border-blue-900 lg:py-3">
-                                <span>Visa No</span>
-                                <span className="font-semibold text-gray-500">AL0005721e</span>
+                                <span className='text-[#666687]'>Visa No</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.BvisaNo }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Employer</span>
-                                <span className="font-semibold text-gray-500">Sumitomo Corporation</span>
+                                <span className='text-[#666687]'>Employer</span>
+                                <span className="font-semibold text-[#666687]"> { singleManPowerData?.Bemployer } </span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Country</span>
-                                <span className="font-semibold text-gray-500">Albania</span>
+                                <span className='text-[#666687]'>Country</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.Bcountry }</span>
                             </div>
                         </div>
                     </div>
@@ -96,24 +106,24 @@ const ClearancePage = () => {
 
                         <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Name</span>
-                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
+                                <span className='text-[#666687]'>Name</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.name }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Certificate No</span>
-                                <span className="font-semibold text-gray-500">8689570</span>
+                                <span className='text-[#666687]'>Certificate No</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.pCertificateNo }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Country</span>
-                                <span className="font-semibold text-gray-500">Albania</span>
+                                <span className='text-[#666687]'>Country</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.pdoCountry }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>TTC</span>
-                                <span className="font-semibold text-gray-500">Technical Training Center, Kushtia</span>
+                                <span className='text-[#666687]'>TTC</span>
+                                <span className="font-semibold text-[#666687]"> { singleManPowerData?.TTCValue }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Issue Date</span>
-                                <span className="font-semibold text-gray-500">2024-06-26</span>
+                                <span className='text-[#666687]'>Issue Date</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.pIssueDate }</span>
                             </div>
                         </div>
                     </div>
@@ -139,20 +149,20 @@ const ClearancePage = () => {
 
                         <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Name</span>
-                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
+                                <span className='text-[#666687]'>Name</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.name }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>BMET No</span>
-                                <span className="font-semibold text-gray-500">KUM20240184666G</span>
+                                <span className='text-[#666687]'>BMET No</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.bmetNo }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Birth Date</span>
-                                <span className="font-semibold text-gray-500">1987-05-25</span>
+                                <span className='text-[#666687]'>Birth Date</span>
+                                <span className="font-semibold text-[#666687]">{singleManPowerData?.userBirthDate}</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Issue Date</span>
-                                <span className="font-semibold text-gray-500">2024-06-12
+                                <span className='text-[#666687]'>Issue Date</span>
+                                <span className="font-semibold text-[#666687]">{singleManPowerData?.bmetIssueDate}
                                 </span>
                             </div>
 
@@ -181,20 +191,20 @@ const ClearancePage = () => {
 
                         <div className="mt-2 lg:text-[21px] text-gray-600 space-y-2 p-6 font-semibold">
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Name</span>
-                                <span className="font-semibold text-gray-500">MD SHAWKAT AKBAR</span>
+                                <span className='text-[#666687]'>Name</span>
+                                <span className="font-semibold text-[#666687]">{singleManPowerData?.name}</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Passport No</span>
-                                <span className="font-semibold text-gray-500">A13378486</span>
+                                <span className='text-[#666687]'>Passport No</span>
+                                <span className="font-semibold text-[#666687]">{singleManPowerData?.passNo}</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Passport Issue Date</span>
-                                <span className="font-semibold text-gray-500">17 Dec 2023</span>
+                                <span className='text-[#666687]'>Passport Issue Date</span>
+                                <span className="font-semibold text-[#666687]">{singleManPowerData?.passIssueDate}</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
-                                <span>Passport Expiry Date</span>
-                                <span className="font-semibold text-gray-500">16 Dec 2033
+                                <span className='text-[#666687]'>Passport Expiry Date</span>
+                                <span className="font-semibold text-[#666687]">{singleManPowerData?.passExpiryDate}
 
                                 </span>
                             </div>

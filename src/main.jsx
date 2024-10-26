@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <BMETcard></BMETcard>
       },
       {
-        path: "/bmet-clearance",
+        path: "/bmet-clearance/:id",
         element: <ClearancePage></ClearancePage>
       },
       {
