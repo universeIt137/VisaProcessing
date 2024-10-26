@@ -28,21 +28,17 @@ const ManPowerUpdate = () => {
         const Passport_Issue_Date = e.target.Passport_Issue_Date.value;
         const dateOfBirth = e.target.dateOfBirth.value;
         const VisaNo = e.target.VisaNo.value;
-        const Bname = e.target.Bname.value;
         const BclearanceId = e.target.BclearanceId.value;
         const BvisaNo = e.target.BvisaNo.value;
         const Bemployer = e.target.Bemployer.value;
         const Bcountry = e.target.Bcountry.value;
-        const pdoName = e.target.pdoName.value;
         const pCertificateNo = e.target.pCertificateNo.value;
         const pdoCountry = e.target.pdoCountry.value;
         const TTC = e.target.TTC.value;
         const pIssueDate = e.target.pIssueDate.value;
-        const bmetName = e.target.bmetName.value;
         const bmetNo = e.target.bmetNo.value;
         const BbirthDate = e.target.BbirthDate.value;
         const bmetIssueDate = e.target.bmetIssueDate.value;
-        const passName = e.target.passName.value;
         const passNo = e.target.passNo.value;
         const passIssueDate = e.target.passIssueDate.value;
         const passExpiryDate = e.target.passExpiryDate.value;
@@ -73,21 +69,17 @@ const ManPowerUpdate = () => {
             Passport_Issue_Date,
             dateOfBirth,
             VisaNo,
-            Bname,
             BclearanceId,
             BvisaNo,
             Bemployer,
             Bcountry,
-            pdoName,
             pCertificateNo,
             pdoCountry,
             TTC,
             pIssueDate,
-            bmetName,
             bmetNo,
             BbirthDate,
             bmetIssueDate,
-            passName,
             passNo,
             passIssueDate,
             passExpiryDate,
@@ -248,21 +240,7 @@ const ManPowerUpdate = () => {
           <p className="text-lg font-semibold my-5 ">BMET Smart Card Information</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
-            {/* Name */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name='Bname'
-                defaultValue={singleManPowerData?.Bname}
-                key={Date.now()}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Your Name"
-              />
-            </div>
+            
 
             {/* Clearance ID */}
             <div>
@@ -333,21 +311,7 @@ const ManPowerUpdate = () => {
           <p className="text-lg font-semibold mb-4 mt-6">PDO Certificate Information</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
-            {/* Name */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="pdoName">
-                Name
-              </label>
-              <input
-                type="text"
-                id="pdoName"
-                name='pdoName'
-                defaultValue={singleManPowerData?.pdoName}
-                key={Date.now()}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Your Name"
-              />
-            </div>
+            
 
             {/* Certificate No */}
             <div>
@@ -417,21 +381,7 @@ const ManPowerUpdate = () => {
           <p className="text-lg font-semibold mb-4 mt-6">BMET Registration Information</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
-            {/* Name */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bmetName">
-                Name
-              </label>
-              <input
-                type="text"
-                id="bmetName"
-                name='bmetName'
-                defaultValue={singleManPowerData?.bmetName}
-                key={Date.now()}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Your Name"
-              />
-            </div>
+            
 
             {/* BMET No */}
             <div>
@@ -485,21 +435,7 @@ const ManPowerUpdate = () => {
           <p className="text-lg font-semibold mb-4 mt-6">Passport Information</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
-            {/* Name */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="passName">
-                Name
-              </label>
-              <input
-                type="text"
-                id="passName"
-                name='passName'
-                defaultValue={singleManPowerData?.passName}
-                key={Date.now()}
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Your Name"
-              />
-            </div>
+            
 
             {/* Passport No */}
             <div>

@@ -93,7 +93,7 @@ const BMETcard = () => {
                 </div>
             </div>
             <div className="w-1/2 mx-auto mt-6">
-                <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729933701/Other%20data/atoeymfg1vqiwg34x2oh.png" alt="" />
+                <img src={singleManPowerData?.qr_code_img} alt="" />
             </div>
         </div>
     );
