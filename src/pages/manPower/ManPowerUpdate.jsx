@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 
 const ManPowerUpdate = () => {
     const [loader,setLoader] = useState(false);
-    const {singleManPowerDataApi,singleManPowerData,manpowerUpdateApi} = manPowerStore();
+    const {singleManPowerDataApi,singleManPowerData,manpowerUpdateApi,manpowerGetAllDataApi} = manPowerStore();
 
     const {img : incomingImg} = singleManPowerData;
 
@@ -95,6 +95,7 @@ const ManPowerUpdate = () => {
             let res = await manpowerUpdateApi(id,payload);
 
             if(res){
+                await manpowerGetAllDataApi();
                 toast.success("Update successfully")
             }else{
                 toast.error("Failed to update")
