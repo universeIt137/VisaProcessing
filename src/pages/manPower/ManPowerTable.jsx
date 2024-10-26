@@ -55,16 +55,16 @@ const ManPowerTable = () => {
                 <td className="py-3 px-4 border-b">{item?.VisaNo}</td>
                 <td className="py-3 px-4 border-b space-x-2">
                   <Link
-                    to={`/man-power/view/${item?._id}`}
+                    to={`/bmet-card`}
                     className="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700"
                   >
-                    View
+                    BMET Card
                   </Link>
                   <Link
-                    to={`/man-power/details/${item?._id}`}
+                    to={`/bmet-clearance`}
                     className="bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700"
                   >
-                    View Details
+                    BMET Clearance Details
                   </Link>
                   <Link
                     to={`/man-power/update/${item?._id}`}
