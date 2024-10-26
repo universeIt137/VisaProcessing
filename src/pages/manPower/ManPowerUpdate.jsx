@@ -4,6 +4,7 @@ import manPowerStore from '../../api-request/manPowerApi';
 import { uploadImage } from '../../uploadImg/UploadImage';
 import { updateAlert } from '../../helper/updateAlert';
 import toast from 'react-hot-toast';
+import { SiNginxproxymanager } from 'react-icons/si';
 
 const ManPowerUpdate = () => {
     const [loader,setLoader] = useState(false);
@@ -17,6 +18,8 @@ const ManPowerUpdate = () => {
             await singleManPowerDataApi(id);
         })()
     },[]);
+
+    console.log(singleManPowerData)
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -92,7 +95,9 @@ const ManPowerUpdate = () => {
           const resp = await updateAlert();
 
           if(resp.isConfirmed){
+            setLoader(true);
             let res = await manpowerUpdateApi(id,payload);
+            setLoader(false);
 
             if(res){
                 await manpowerGetAllDataApi();
@@ -117,8 +122,14 @@ const ManPowerUpdate = () => {
         <form onSubmit={handleSubmit} >
 
           <p className="text-lg font-semibold mb-4">Personal Information</p>
-
+          
+          <div className="avatar">
+                <div className="w-20 ml-72 ">
+                <img className='rounded-full' src={singleManPowerData?.img}/>
+                </div>
+            </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg">
+            
             {/* Name */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
@@ -127,13 +138,15 @@ const ManPowerUpdate = () => {
               <input
                 type="text"
                 id="name"
-                name='name'
+                name='userName'
                 defaultValue={singleManPowerData?.name}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Your Name"
               />
             </div>
+
+            
 
             {/* Img */}
             <div>
@@ -157,7 +170,7 @@ const ManPowerUpdate = () => {
                 type="date"
                 id="Passport_Issue_Date"
                 name='Passport_Issue_Date'
-                defaultValue={singleManPowerData?.Passport_Issue_Date}
+                defaultValue={singleManPowerData?.passportDate}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -172,7 +185,7 @@ const ManPowerUpdate = () => {
                 type="date"
                 id="Date_Of_Birth"
                 name='dateOfBirth'
-                defaultValue={singleManPowerData?.Date_Of_Birth}
+                defaultValue={singleManPowerData?.dateOfBirth}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -187,7 +200,7 @@ const ManPowerUpdate = () => {
                 type="text"
                 id="Visa_No"
                 name='VisaNo'
-                defaultValue={singleManPowerData?.Visa_No}
+                defaultValue={singleManPowerData?.VisaNo}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Visa Number"
@@ -340,8 +353,8 @@ const ManPowerUpdate = () => {
               <input
                 type="text"
                 id="TTC"
-                name='TTC'
-                defaultValue={singleManPowerData?.pTTC}
+                name='TTCValue'
+                defaultValue={singleManPowerData?.TTCValue}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter TTC"
@@ -409,7 +422,7 @@ const ManPowerUpdate = () => {
                 type="date"
                 id="birthDate"
                 name='BbirthDate'
-                defaultValue={singleManPowerData?.BBirthDate}
+                defaultValue={singleManPowerData?.BbirthDate}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -513,10 +526,13 @@ const ManPowerUpdate = () => {
           {/* Submit Button */}
           <div className="w-full sm:w-1/2 lg:w-1/3 mx-auto mt-8">
             <button
-              type="submit"
-              className="w-full bg-red-600 text-white py-2 px-4 rounded-lg  focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+                type="submit"
+                disabled={loader} // Disable the button during submission
+                className={`w-full bg-red-600 text-white py-2 px-4 rounded-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out ${
+                loader ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
             >
-              Submit
+                {loader ? 'Updating...' : 'Submit'}
             </button>
           </div>
         </form>

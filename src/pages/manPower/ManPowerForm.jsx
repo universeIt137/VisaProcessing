@@ -5,12 +5,12 @@ import Swal from 'sweetalert2';
 
 const ManPowerForm = () => {
   const [loader, setLoader] = useState(false);
-  const { manpowerCreateApi } = manPowerStore()
+  const { manpowerCreateApi,manpowerGetAllDataApi } = manPowerStore()
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const name = e.target.name.value;
+    const name = e.target.userName.value;
     const img = e.target.img.files[0];
-    const Passport_Issue_Date = e.target.Passport_Issue_Date.value;
+    const passportDate = e.target.passportDate.value;
     const dateOfBirth = e.target.dateOfBirth.value;
     const VisaNo = e.target.VisaNo.value;
     const Bname = e.target.Bname.value;
@@ -21,11 +21,11 @@ const ManPowerForm = () => {
     const pdoName = e.target.pdoName.value;
     const pCertificateNo = e.target.pCertificateNo.value;
     const pdoCountry = e.target.pdoCountry.value;
-    const TTC = e.target.TTC.value;
+    const TTCValue = e.target.TTCValue.value;
     const pIssueDate = e.target.pIssueDate.value;
     const bmetName = e.target.bmetName.value;
     const bmetNo = e.target.bmetNo.value;
-    const BbirthDate = e.target.BbirthDate.value;
+    const userBirthDate = e.target.userBirthDate.value;
     const bmetIssueDate = e.target.bmetIssueDate.value;
     const passName = e.target.passName.value;
     const passNo = e.target.passNo.value;
@@ -38,7 +38,7 @@ const ManPowerForm = () => {
     const payload = {
       name,
       img: project_imgUrl,
-      Passport_Issue_Date,
+      passportDate,
       dateOfBirth,
       VisaNo,
       Bname,
@@ -49,11 +49,11 @@ const ManPowerForm = () => {
       pdoName,
       pCertificateNo,
       pdoCountry,
-      TTC,
+      TTCValue,
       pIssueDate,
       bmetName,
       bmetNo,
-      BbirthDate,
+      userBirthDate,
       bmetIssueDate,
       passName,
       passNo,
@@ -61,10 +61,34 @@ const ManPowerForm = () => {
       passExpiryDate,
     };
 
+    console.log(name,
+        img,
+        passportDate,
+        dateOfBirth,
+        VisaNo,
+        Bname,
+        BclearanceId,
+        BvisaNo,
+        Bemployer,
+        Bcountry,
+        pdoName,
+        pCertificateNo,
+        pdoCountry,
+        TTCValue,
+        pIssueDate,
+        bmetName,
+        bmetNo,
+        bmetIssueDate,
+        passName,
+        passNo,
+        passIssueDate,
+        passExpiryDate,)
+
     setLoader(true);
     let res = await manpowerCreateApi(payload);
     setLoader(false);
     if (res) {
+    await manpowerGetAllDataApi()
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -98,7 +122,7 @@ const ManPowerForm = () => {
               <input
                 type="text"
                 id="name"
-                name='name'
+                name='userName'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Your Name"
               />
@@ -124,8 +148,8 @@ const ManPowerForm = () => {
               </label>
               <input
                 type="date"
-                id="Passport_Issue_Date"
-                name='Passport_Issue_Date'
+                id="PassportDate"
+                name='passportDate'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -287,7 +311,7 @@ const ManPowerForm = () => {
               <input
                 type="text"
                 id="TTC"
-                name='TTC'
+                name='TTCValue'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter TTC"
               />
@@ -347,7 +371,7 @@ const ManPowerForm = () => {
               <input
                 type="date"
                 id="birthDate"
-                name='BbirthDate'
+                name='userBirthDate'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -427,11 +451,14 @@ const ManPowerForm = () => {
           </div>
           {/* Submit Button */}
           <div className="w-full sm:w-1/2 lg:w-1/3 mx-auto mt-8">
-            <button
-              type="submit"
-              className="w-full bg-red-600 text-white py-2 px-4 rounded-lg  focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+          <button
+                type="submit"
+                disabled={loader} // Disable the button during submission
+                className={`w-full bg-red-600 text-white py-2 px-4 rounded-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out ${
+                loader ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
             >
-              Submit
+                {loader ? 'Updating...' : 'Submit'}
             </button>
           </div>
         </form>
