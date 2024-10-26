@@ -22,6 +22,7 @@ import HomePage from './pages/homePage/HomePage.jsx';
 import ManPower from './pages/manPower/ManPower.jsx';
 import BMETcard from './pages/smartCard/BMETcard.jsx';
 import ManPowerUpdate from './pages/manPower/ManPowerUpdate.jsx';
+import ClearancePage from './pages/smartCard/ClearancePage.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/bmet-card",
         element: <BMETcard></BMETcard>
+      },
+      {
+        path: "/bmet-clearance",
+        element: <ClearancePage></ClearancePage>
       },
       {
         path: "/visa-processing",

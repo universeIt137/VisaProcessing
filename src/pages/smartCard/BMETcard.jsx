@@ -2,7 +2,7 @@ import React from 'react';
 
 const BMETcard = () => {
     return (
-        <div className='mx-auto lg:w-1/3 mt-14'>
+        <div className='mx-auto lg:w-1/3 lg:mt-14'>
             <div className="border border-[#1a7a86] rounded-xl">
                 <div className="bg-gradient-to-r from-[#1a7a86] to-[#7269c5] rounded-t-xl">
                     <div className="flex justify-around items-center   py-4">
