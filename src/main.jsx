@@ -20,6 +20,7 @@ import FormDetail from './pages/Form/FormDetail.jsx';
 import UpdateNominee from './pages/Form/UpdateNominee.jsx';
 import HomePage from './pages/homePage/HomePage.jsx';
 import ManPower from './pages/manPower/ManPower.jsx';
+import BMETcard from './pages/smartCard/BMETcard.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>
+      },
+      {
+        path: "/bmet-card",
+        element: <BMETcard></BMETcard>
       },
       {
         path: "/visa-processing",
