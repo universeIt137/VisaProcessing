@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <HomePage></HomePage>
       },
       {
-        path: "/bmet-card",
+        path: "/bmet-card/:id",
         element: <BMETcard></BMETcard>
       },
       {

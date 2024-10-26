@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import manPowerStore from '../../api-request/manPowerApi';
+import { useParams } from 'react-router-dom';
 
 const BMETcard = () => {
+    const {singleManPowerDataApi,singleManPowerData} = manPowerStore();
+    const {id} = useParams();
+    useEffect(()=>{
+        (async()=>{
+            await singleManPowerDataApi(id);
+        })()
+    },[id])
     return (
         <div className='mx-auto lg:w-1/3 lg:mt-14'>
             <div className="border border-[#1a7a86] rounded-xl">
@@ -14,7 +23,7 @@ const BMETcard = () => {
                             <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1729929684/Other%20data/ag8cmhvvvdkmzmlbzhbw.png" alt="" className='w-10' />
                         </div>
                     </div>
-                    <p className='text-white ml-[30px] lg:ml-[60px] -mt-3 pb-5'>Clearance ID: AL-I-2024-4000100</p>
+                    <p className='text-white ml-[30px] lg:ml-[60px] -mt-3 pb-5'>Clearance ID: ${singleManPowerData?.BclearanceId} </p>
                 </div>
 
                 <div className=" flex justify-around  py-10">
@@ -24,7 +33,7 @@ const BMETcard = () => {
                     <div className="mr-[10px] space-y-1">
                         <div className="">
                             <p className='font-semibold text-[12px]'>Name:</p>
-                            <p className='uppercase font-bold text-[14px]'>md shakawat akbar</p>
+                            <p className='uppercase font-bold text-[14px]'>{singleManPowerData?.name}</p>
                         </div>
                         <div className="">
                             <p className='font-semibold text-[12px]'>Passport Number:</p>
@@ -32,7 +41,7 @@ const BMETcard = () => {
                         </div>
                         <div className="">
                             <p className='font-semibold text-[12px]'>Visa Number:</p>
-                            <p className='uppercase font-bold text-[14px]'>A2234234DFD</p>
+                            <p className='uppercase font-bold text-[14px]'>{singleManPowerData?.VisaNo}</p>
                         </div>
 
                     </div>
