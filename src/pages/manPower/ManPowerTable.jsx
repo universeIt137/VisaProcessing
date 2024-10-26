@@ -55,7 +55,7 @@ const ManPowerTable = () => {
                 <td className="py-3 px-4 border-b">{item?.VisaNo}</td>
                 <td className="py-3 px-4 border-b space-x-2">
                   <Link
-                    to={`/bmet-card`}
+                    to={`/bmet-card/${item._id}`}
                     className="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700"
                   >
                     BMET Card
