@@ -4,9 +4,9 @@ import { uploadImage } from './../../uploadImg/UploadImage';
 import Swal from 'sweetalert2';
 
 const ManPowerForm = () => {
-    const [loader,setLoader] = useState(false);
-    const {manpowerCreateApi} = manPowerStore()
-const handleSubmit = async(e)=>{
+  const [loader, setLoader] = useState(false);
+  const { manpowerCreateApi } = manPowerStore()
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const name = e.target.name.value;
     const img = e.target.img.files[0];
@@ -36,48 +36,48 @@ const handleSubmit = async(e)=>{
     if (img?.name) project_imgUrl = await uploadImage(img);
 
     const payload = {
-        name,
-        img : project_imgUrl,
-        Passport_Issue_Date,
-        dateOfBirth,
-        VisaNo,
-        Bname,
-        BclearanceId,
-        BvisaNo,
-        Bemployer,
-        Bcountry,
-        pdoName,
-        pCertificateNo,
-        pdoCountry,
-        TTC,
-        pIssueDate,
-        bmetName,
-        bmetNo,
-        BbirthDate,
-        bmetIssueDate,
-        passName,
-        passNo,
-        passIssueDate,
-        passExpiryDate,
+      name,
+      img: project_imgUrl,
+      Passport_Issue_Date,
+      dateOfBirth,
+      VisaNo,
+      Bname,
+      BclearanceId,
+      BvisaNo,
+      Bemployer,
+      Bcountry,
+      pdoName,
+      pCertificateNo,
+      pdoCountry,
+      TTC,
+      pIssueDate,
+      bmetName,
+      bmetNo,
+      BbirthDate,
+      bmetIssueDate,
+      passName,
+      passNo,
+      passIssueDate,
+      passExpiryDate,
     };
 
     setLoader(true);
     let res = await manpowerCreateApi(payload);
     setLoader(false);
-    if(res){
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "User Data Submitted",
-            showConfirmButton: false,
-            timer: 1500
-        });
-        e.target.reset();
-    }else{
-        alert("Failed to Add Nominee Data");
+    if (res) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "User Data Submitted",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      e.target.reset();
+    } else {
+      alert("Failed to Add Nominee Data");
     }
 
-}
+  }
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-4xl">
@@ -87,76 +87,76 @@ const handleSubmit = async(e)=>{
 
         <form onSubmit={handleSubmit} >
 
-        <p className="text-lg font-semibold mb-4">Personal Information</p>
+          <p className="text-lg font-semibold mb-4">Personal Information</p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg">
             {/* Name */}
             <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                 Name
-                </label>
-                <input
+              </label>
+              <input
                 type="text"
                 id="name"
                 name='name'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Your Name"
-                />
+              />
             </div>
 
             {/* Img */}
             <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="img">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="img">
                 Img
-                </label>
-                <input
+              </label>
+              <input
                 type="file"
                 id="img"
                 name='img'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+              />
             </div>
 
             {/* Passport Issue Date */}
             <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Passport_No">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Passport_No">
                 Passport Issue Date
-                </label>
-                <input
+              </label>
+              <input
                 type="date"
                 id="Passport_Issue_Date"
                 name='Passport_Issue_Date'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+              />
             </div>
 
             {/* Date Of Birth */}
             <div   >
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Date_Of_Birth">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Date_Of_Birth">
                 Date Of Birth
-                </label>
-                <input
+              </label>
+              <input
                 type="date"
                 id="Date_Of_Birth"
                 name='dateOfBirth'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
+              />
             </div>
 
             {/* Visa No */}
             <div  >
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Visa_No">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Visa_No">
                 Visa No
-                </label>
-                <input
+              </label>
+              <input
                 type="text"
                 id="Visa_No"
                 name='VisaNo'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Visa Number"
-                />
+              />
             </div>
-            </div>
+          </div>
 
 
           <p className="text-lg font-semibold my-5 ">BMET Smart Card Information</p>
@@ -424,7 +424,7 @@ const handleSubmit = async(e)=>{
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-           </div>
+          </div>
           {/* Submit Button */}
           <div className="w-full sm:w-1/2 lg:w-1/3 mx-auto mt-8">
             <button
