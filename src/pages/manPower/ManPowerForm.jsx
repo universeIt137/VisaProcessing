@@ -82,7 +82,7 @@ const ManPowerForm = () => {
     <div className="flex items-center justify-center min-h-screen  py-8 px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-4xl">
         <h2 className="text-xl sm:text-2xl font-bold text-gray-800 text-center mb-6">
-          Upload Nominee Data
+          Upload Manpower related data
         </h2>
 
         <form onSubmit={handleSubmit} >
