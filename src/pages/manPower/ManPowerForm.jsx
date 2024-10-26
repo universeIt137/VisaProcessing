@@ -31,6 +31,9 @@ const ManPowerForm = () => {
     const passNo = e.target.passNo.value;
     const passIssueDate = e.target.passIssueDate.value;
     const passExpiryDate = e.target.passExpiryDate.value;
+    const Mother_Name = e.target.Mother_Name.value;
+    const Father_Name = e.target.Father_Name.value;
+    const Clearance_Date = e.target.Clearance_Date.value;
 
     let project_imgUrl = '';
     if (img?.name) project_imgUrl = await uploadImage(img);
@@ -59,30 +62,11 @@ const ManPowerForm = () => {
       passNo,
       passIssueDate,
       passExpiryDate,
+      Father_Name,
+      Mother_Name,
+      Clearance_Date
     };
 
-    console.log(name,
-        img,
-        passportDate,
-        dateOfBirth,
-        VisaNo,
-        Bname,
-        BclearanceId,
-        BvisaNo,
-        Bemployer,
-        Bcountry,
-        pdoName,
-        pCertificateNo,
-        pdoCountry,
-        TTCValue,
-        pIssueDate,
-        bmetName,
-        bmetNo,
-        bmetIssueDate,
-        passName,
-        passNo,
-        passIssueDate,
-        passExpiryDate,)
 
     setLoader(true);
     let res = await manpowerCreateApi(payload);
@@ -180,6 +164,35 @@ const ManPowerForm = () => {
                 placeholder="Enter Visa Number"
               />
             </div>
+
+                {/* Father name  */}
+            <div  >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
+                Father Name
+              </label>
+              <input
+                type="text"
+                id="father-name"
+                name='Father_Name'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Father Name"
+              />
+            </div>
+
+                 {/* Father name  */}
+              <div  >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
+                Mother Name
+              </label>
+              <input
+                type="text"
+                id="mother-name"
+                name='Mother_Name'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Mother Name"
+              />
+            </div>
+
           </div>
 
 
@@ -213,6 +226,20 @@ const ManPowerForm = () => {
                 placeholder="Enter Clearance ID"
               />
             </div>
+            
+            {/* Clearance Date */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="clearanceDate">
+                Clearance Date
+              </label>
+              <input
+                type="date"
+                id="clearanceDate"
+                name='Clearance_Date'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Clearance ID"
+              />
+            </div>
 
             {/* Visa No */}
             <div>
@@ -231,14 +258,14 @@ const ManPowerForm = () => {
             {/* Employer */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="employer">
-                Employer
+                Job Title
               </label>
               <input
                 type="text"
                 id="employer"
                 name='Bemployer'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Employer Name"
+                placeholder="Enter Job Title"
               />
             </div>
 

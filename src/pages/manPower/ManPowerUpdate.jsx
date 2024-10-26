@@ -47,6 +47,8 @@ const ManPowerUpdate = () => {
         const passIssueDate = e.target.passIssueDate.value;
         const passExpiryDate = e.target.passExpiryDate.value;
         const qr_code_img = e.target.qr_code_img.files[0];
+        const Father_Name = e.target.Father_Name.value;
+        const Mother_Name = e.target.Mother_Name.value;
 
 
         let imgUrl = incomingImg;
@@ -89,7 +91,9 @@ const ManPowerUpdate = () => {
             passNo,
             passIssueDate,
             passExpiryDate,
-            qr_code_img : qrImgUrl
+            qr_code_img : qrImgUrl,
+            Father_Name,
+            Mother_Name
           };
 
           const resp = await updateAlert();
@@ -204,6 +208,38 @@ const ManPowerUpdate = () => {
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Visa Number"
+              />
+            </div>
+            
+                {/* Father name  */}
+                <div  >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
+                Father Name
+              </label>
+              <input
+                type="text"
+                id="father-name"
+                name='Father_Name'
+                defaultValue={singleManPowerData?.Father_Name}
+                key={Date.now()}
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Father Name"
+              />
+            </div>
+
+                 {/* Father name  */}
+              <div  >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
+                Mother Name
+              </label>
+              <input
+                type="text"
+                id="mother-name"
+                name='Mother_Name'
+                defaultValue={singleManPowerData?.Mother_Name}
+                key={Date.now()}
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                
               />
             </div>
           </div>
