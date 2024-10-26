@@ -49,6 +49,8 @@ const ManPowerUpdate = () => {
         const qr_code_img = e.target.qr_code_img.files[0];
         const Father_Name = e.target.Father_Name.value;
         const Mother_Name = e.target.Mother_Name.value;
+        
+        const Clearance_Date = e.target.Clearance_Date.value;
 
 
         let imgUrl = incomingImg;
@@ -68,6 +70,7 @@ const ManPowerUpdate = () => {
 
 
         const payload = {
+          Clearance_Date,
             name,
             img: imgUrl,
             Passport_Issue_Date,
@@ -274,6 +277,23 @@ const ManPowerUpdate = () => {
                 id="clearanceId"
                 name='BclearanceId'
                 defaultValue={singleManPowerData?.BclearanceId}
+                key={Date.now()}
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Clearance ID"
+              />
+            </div>
+
+            {/* Clearance Date
+ */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="clearanceDate">
+                Clearance ID
+              </label>
+              <input
+                type="date"
+                id="clearanceDate"
+                name='Clearance_Date'
+                defaultValue={singleManPowerData?.Clearance_Date}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Clearance ID"

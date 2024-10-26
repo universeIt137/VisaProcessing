@@ -61,7 +61,7 @@ const ManPowerTable = () => {
                     BMET Card
                   </Link>
                   <Link
-                    to={`/bmet-clearance`}
+                    to={`/bmet-clearance/${item?._id}`}
                     className="bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700"
                   >
                     BMET Clearance Details
