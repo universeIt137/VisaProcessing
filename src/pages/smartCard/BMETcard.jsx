@@ -28,7 +28,7 @@ const BMETcard = () => {
 
                 <div className=" flex justify-around  py-10">
                     <div className="">
-                        <img src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1724761417/LMS/lt7agjgd15ok2ktoquow.png" alt="" className=' border w-2/3 mx-auto rounded-lg' />
+                        <img src= {singleManPowerData?.img} />
                     </div>
                     <div className="mr-[10px] space-y-1">
                         <div className="">
@@ -88,7 +88,7 @@ const BMETcard = () => {
                     </div>
                     <div className="w-1/2">
                         <p className='text-[12px]'>Clearance Date:</p>
-                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>17 Dec 2023</p>
+                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'> { singleManPowerData?.Clearance_Date } </p>
                     </div>
                 </div>
             </div>
