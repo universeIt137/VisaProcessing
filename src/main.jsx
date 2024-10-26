@@ -21,6 +21,7 @@ import UpdateNominee from './pages/Form/UpdateNominee.jsx';
 import HomePage from './pages/homePage/HomePage.jsx';
 import ManPower from './pages/manPower/ManPower.jsx';
 import BMETcard from './pages/smartCard/BMETcard.jsx';
+import ManPowerUpdate from './pages/manPower/ManPowerUpdate.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/nominee-update/:id",
         element: <UpdateNominee></UpdateNominee>
+      },
+      {
+        path : "/man-power/update/:id",
+        element : <ManPowerUpdate></ManPowerUpdate>
       }
     ]
 

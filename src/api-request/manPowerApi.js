@@ -13,8 +13,46 @@ const manPowerStore = create((set)=>({
         }else {
             return false;
         }
+    },
+    manpowerGetAllData : [],
+
+    manpowerGetAllDataApi : async ()=>{
+        const res = await useAxios.get(`/man-power`);
+        if(res){
+            set({manpowerGetAllData : res.data});
+            return true;
+        } else {
+            return false;
+        }
+    },
+    deleteManPowerApi : async (id)=>{
+        const res = await useAxios.delete(`/man-power/${id}`);
+        if(res){
+            return true;
+        } else {
+            return false;
+        }
+    },
+    manpowerUpdateApi : async (id,payload)=>{
+        const res = await useAxios.put(`/man-power/${id}`, payload);
+        if(res){
+            return true;
+        } else {
+            return false;
+        }
+    },
+    singleManPowerData : [],
+    singleManPowerDataApi : async (id)=>{
+        const res = await useAxios.get(`/man-power/${id}`);
+        if(res){
+            set({singleManPowerData : res.data});
+            return true;
+        } else {
+            return false;
+        }
     }
 }));
+
 
 
 export default manPowerStore;
