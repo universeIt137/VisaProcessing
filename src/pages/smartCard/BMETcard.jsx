@@ -36,8 +36,8 @@ const BMETcard = () => {
                             <p className='uppercase font-bold text-[14px]'>{singleManPowerData?.name}</p>
                         </div>
                         <div className="">
-                            <p className='font-semibold text-[12px]'>Passport Number:</p>
-                            <p className='uppercase font-bold text-[14px]'>A2234234DFD</p>
+                            <p className='font-semibold text-[12px]'>Passport Number:  </p>
+                            <p className='uppercase font-bold text-[14px]'>{singleManPowerData?.passNo }</p>
                         </div>
                         <div className="">
                             <p className='font-semibold text-[12px]'>Visa Number:</p>
@@ -50,11 +50,11 @@ const BMETcard = () => {
                 <div className="border-b-2 border-black flex gap-5 px-4 mx-4 my-2">
                     <div className=" w-1/2">
                         <p className="text-[12px]">Father:</p>
-                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>md shakawat akbar</p>
+                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'> { singleManPowerData?.Father_Name } </p>
                     </div>
                     <div className=" w-1/2">
                         <p className='text-[12px]'>Mother:</p>
-                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>md shakawat akbar</p>
+                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>{ singleManPowerData?.Mother_Name }</p>
                     </div>
                 </div>
 
@@ -66,25 +66,25 @@ const BMETcard = () => {
                     </div>
                     <div className="w-1/2">
                         <p className='text-[12px]'>Employer:</p>
-                        <p className='uppercase font-bold text-[10px] lg:text-[12px]'>sumitomono Corporation</p>
+                        <p className='uppercase font-bold text-[10px] lg:text-[12px]'>{singleManPowerData?.Bemployer}</p>
                     </div>
                 </div>
 
                 <div className="border-b-2 border-black flex gap-5 px-4 mx-4 my-2">
                     <div className="w-1/2">
                         <p className='text-[12px]'>Job:</p>
-                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>General Worker</p>
+                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>{singleManPowerData?.Bemployer}</p>
                     </div>
                     <div className="w-1/2">
                         <p className='text-[12px]'>Country:</p>
-                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>Albania</p>
+                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>{singleManPowerData?.Bcountry}</p>
                     </div>
                 </div>
 
                 <div className="border-b-2 border-black flex gap-5 px-4 mx-4 my-2 mb-10">
                     <div className="w-1/2">
                         <p className='text-[12px]'>Passport Issue Date:</p>
-                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>17 Dec 2024</p>
+                        <p className='uppercase font-bold text-[12px] lg:text-[14px]'>{singleManPowerData?.passIssueDate}</p>
                     </div>
                     <div className="w-1/2">
                         <p className='text-[12px]'>Clearance Date:</p>
