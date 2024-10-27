@@ -28,19 +28,15 @@ const ManPowerUpdate = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const img = e.target.img.files[0];
-    const Passport_Issue_Date = e.target.Passport_Issue_Date.value;
     const dateOfBirth = e.target.dateOfBirth.value;
     const VisaNo = e.target.VisaNo.value;
     const BclearanceId = e.target.BclearanceId.value;
-    const BvisaNo = e.target.BvisaNo.value;
     const Bemployer = e.target.Bemployer.value;
     const Bcountry = e.target.Bcountry.value;
     const pCertificateNo = e.target.pCertificateNo.value;
-    const pdoCountry = e.target.pdoCountry.value;
     const TTC = e.target.TTC.value;
     const pIssueDate = e.target.pIssueDate.value;
     const bmetNo = e.target.bmetNo.value;
-    const BbirthDate = e.target.BbirthDate.value;
     const bmetIssueDate = e.target.bmetIssueDate.value;
     const passNo = e.target.passNo.value;
     const passIssueDate = e.target.passIssueDate.value;
@@ -49,7 +45,6 @@ const ManPowerUpdate = () => {
     const Father_Name = e.target.Father_Name.value;
     const Mother_Name = e.target.Mother_Name.value;
 
-    const Clearance_Date = e.target.Clearance_Date.value;
 
 
     let imgUrl = incomingImg;
@@ -71,22 +66,17 @@ const ManPowerUpdate = () => {
 
 
     const payload = {
-      Clearance_Date,
       name,
       img: imgUrl,
-      Passport_Issue_Date,
       dateOfBirth,
       VisaNo,
       BclearanceId,
-      BvisaNo,
       Bemployer,
       Bcountry,
       pCertificateNo,
-      pdoCountry,
       TTC,
       pIssueDate,
       bmetNo,
-      BbirthDate,
       bmetIssueDate,
       passNo,
       passIssueDate,
@@ -126,7 +116,7 @@ const ManPowerUpdate = () => {
       <div className="flex items-center justify-center min-h-screen  py-8 px-4 sm:px-6 lg:px-8">
         <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 w-full max-w-4xl">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-800 text-center mb-6">
-            Update Nominee Data
+            Update Nominee's Man Power Data
           </h2>
 
           <form onSubmit={handleSubmit} >
@@ -173,20 +163,7 @@ const ManPowerUpdate = () => {
                 </div>
               </div>
 
-              {/* Passport Issue Date */}
-              <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Passport_No">
-                  Passport Issue Date
-                </label>
-                <input
-                  type="date"
-                  id="Passport_Issue_Date"
-                  name='Passport_Issue_Date'
-                  defaultValue={singleManPowerData?.passportDate}
-                  key={Date.now()}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+              
 
               {/* Date Of Birth */}
               <div   >
@@ -235,7 +212,7 @@ const ManPowerUpdate = () => {
                 />
               </div>
 
-              {/* Father name  */}
+              {/* Mother name  */}
               <div  >
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
                   Mother Name
@@ -274,38 +251,9 @@ const ManPowerUpdate = () => {
                 />
               </div>
 
-              {/* Clearance Date
- */}
-              <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="clearanceDate">
-                  Clearance Date
-                </label>
-                <input
-                  type="date"
-                  id="clearanceDate"
-                  name='Clearance_Date'
-                  defaultValue={singleManPowerData?.Clearance_Date}
-                  key={Date.now()}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter Clearance ID"
-                />
-              </div>
+              
 
-              {/* Visa No */}
-              <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="visaNo">
-                  Visa No
-                </label>
-                <input
-                  type="text"
-                  id="visaNo"
-                  name='BvisaNo'
-                  defaultValue={singleManPowerData?.BvisaNo}
-                  key={Date.now()}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter Visa Number"
-                />
-              </div>
+              
 
               {/* Employer */}
               <div>
@@ -352,7 +300,7 @@ const ManPowerUpdate = () => {
                   Certificate No
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   id="certificateNo"
                   name='pCertificateNo'
                   defaultValue={singleManPowerData?.pCertificateNo}
@@ -362,26 +310,12 @@ const ManPowerUpdate = () => {
                 />
               </div>
 
-              {/* Country */}
-              <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="pdoCountry">
-                  Country
-                </label>
-                <input
-                  type="text"
-                  id="pdoCountry"
-                  name='pdoCountry'
-                  defaultValue={singleManPowerData?.pdoCountry}
-                  key={Date.now()}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter Country"
-                />
-              </div>
+              
 
               {/* TTC */}
               <div>
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="TTC">
-                  TTC
+                  TTC Name
                 </label>
                 <input
                   type="text"
@@ -432,25 +366,12 @@ const ManPowerUpdate = () => {
                 />
               </div>
 
-              {/* Birth Date */}
-              <div>
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="birthDate">
-                  Birth Date
-                </label>
-                <input
-                  type="date"
-                  id="birthDate"
-                  name='BbirthDate'
-                  defaultValue={singleManPowerData?.BbirthDate}
-                  key={Date.now()}
-                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+              
 
               {/* Issue Date */}
               <div>
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bmetIssueDate">
-                  Issue Date
+                 BMET Issue Date
                 </label>
                 <input
                   type="date"
