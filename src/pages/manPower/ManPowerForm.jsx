@@ -25,6 +25,8 @@ const ManPowerForm = () => {
     const passExpiryDate = e.target.passExpiryDate.value;
     const Mother_Name = e.target.Mother_Name.value;
     const Father_Name = e.target.Father_Name.value;
+    const Job_Type = e.target.job_type.value;
+    const Bmet_clearance = e.target.Bmet_clearance.value;
 
     let project_imgUrl = '';
     if (img?.name) project_imgUrl = await uploadImage(img);
@@ -50,6 +52,8 @@ const ManPowerForm = () => {
       passExpiryDate,
       Father_Name,
       Mother_Name,
+      Job_Type,
+      Bmet_clearance
     };
 
 
@@ -153,7 +157,7 @@ const ManPowerForm = () => {
               />
             </div>
 
-            {/* Father name  */}
+            {/* Mother name  */}
             <div  >
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
                 Mother Name
@@ -164,6 +168,20 @@ const ManPowerForm = () => {
                 name='Mother_Name'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Mother Name"
+              />
+            </div>
+
+            {/* Job Type  */}
+            <div  >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
+                Job Type
+              </label>
+              <input
+                type="text"
+                id="job-type"
+                name='job_type'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Job Type"
               />
             </div>
 
@@ -218,6 +236,19 @@ const ManPowerForm = () => {
                 name='Bcountry'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Country"
+              />
+            </div>
+
+            {/* Clearance Date */}
+            <div   >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Date_Of_Birth">
+                BMET Smart Card Clearance Date
+              </label>
+              <input
+                type="date"
+                id="Bmet_clearance"
+                name='Bmet_clearance'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>

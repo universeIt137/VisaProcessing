@@ -44,6 +44,8 @@ const ManPowerUpdate = () => {
     const qr_code = e.target.qr_code_img.files[0];
     const Father_Name = e.target.Father_Name.value;
     const Mother_Name = e.target.Mother_Name.value;
+    const Job_Type = e.target.job_type.value;
+    const Bmet_clearance = e.target.Bmet_clearance.value;
 
 
 
@@ -83,7 +85,9 @@ const ManPowerUpdate = () => {
       passExpiryDate,
       qr_code_img: qrImgUrl,
       Father_Name,
-      Mother_Name
+      Mother_Name,
+      Job_Type,
+      Bmet_clearance
     };
 
     const resp = await updateAlert();
@@ -163,7 +167,7 @@ const ManPowerUpdate = () => {
                 </div>
               </div>
 
-              
+
 
               {/* Date Of Birth */}
               <div   >
@@ -227,6 +231,21 @@ const ManPowerUpdate = () => {
 
                 />
               </div>
+
+              {/* Job Type  */}
+              <div  >
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
+                  Job Type
+                </label>
+                <input
+                  type="text"
+                  id="job-type"
+                  name='job_type'
+                  defaultValue={singleManPowerData?.Job_Type}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Job Type"
+                />
+              </div>
             </div>
 
 
@@ -251,9 +270,9 @@ const ManPowerUpdate = () => {
                 />
               </div>
 
-              
 
-              
+
+
 
               {/* Employer */}
               <div>
@@ -286,6 +305,20 @@ const ManPowerUpdate = () => {
                   placeholder="Enter Country"
                 />
               </div>
+
+              {/* Clearance Date */}
+              <div   >
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Date_Of_Birth">
+                  BMET Smart Card Clearance Date
+                </label>
+                <input
+                  type="date"
+                  id="Bmet_clearance"
+                  name='Bmet_clearance'
+                  defaultValue={singleManPowerData?.Bmet_clearance}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
             </div>
 
             {/* PDO Certificate Information */}
@@ -310,7 +343,7 @@ const ManPowerUpdate = () => {
                 />
               </div>
 
-              
+
 
               {/* TTC */}
               <div>
@@ -366,12 +399,12 @@ const ManPowerUpdate = () => {
                 />
               </div>
 
-              
+
 
               {/* Issue Date */}
               <div>
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bmetIssueDate">
-                 BMET Issue Date
+                  BMET Issue Date
                 </label>
                 <input
                   type="date"
