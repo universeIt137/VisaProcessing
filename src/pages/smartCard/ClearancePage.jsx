@@ -21,7 +21,7 @@ const ClearancePage = () => {
                         <img
                             src= { singleManPowerData?.img } // Replace with your image URL
                             alt="Profile"
-                            className=" rounded-md border border-black size-28 lg:w-32 lg:h-40"
+                            className=" rounded-2xl border border-black size-28 lg:w-32 lg:h-36"
                         />
                     </div>
                     <div className="lg:w-2/3">
@@ -37,7 +37,7 @@ const ClearancePage = () => {
                             </div>
                             <div className="flex justify-between border-b  border-gray-300 lg:py-1">
                                 <span className='text-[#666687]'>Date of Birth</span>
-                                <span className="font-semibold text-[#4A4A6A]"> { singleManPowerData?.userBirthDate } </span>
+                                <span className="font-semibold text-[#4A4A6A]"> { singleManPowerData?.dateOfBirth } </span>
                             </div>
                             <div className="flex justify-between lg:py-1">
                                 <span className='text-[#666687]'>Visa No.</span>
@@ -72,7 +72,7 @@ const ClearancePage = () => {
                             </div>
                             <div className="flex justify-between border-b-2 border-dashed  border-blue-900 lg:py-3">
                                 <span className='text-[#666687]'>Visa No</span>
-                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.BvisaNo }</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.VisaNo }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
                                 <span className='text-[#666687]'>Employer</span>
@@ -115,7 +115,7 @@ const ClearancePage = () => {
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
                                 <span className='text-[#666687]'>Country</span>
-                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.pdoCountry }</span>
+                                <span className="font-semibold text-[#666687]">{ singleManPowerData?.Bcountry }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
                                 <span className='text-[#666687]'>TTC</span>
@@ -158,7 +158,7 @@ const ClearancePage = () => {
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
                                 <span className='text-[#666687]'>Birth Date</span>
-                                <span className="font-semibold text-[#666687]">{singleManPowerData?.userBirthDate}</span>
+                                <span className="font-semibold text-[#666687]">{singleManPowerData?.dateOfBirth}</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3">
                                 <span className='text-[#666687]'>Issue Date</span>

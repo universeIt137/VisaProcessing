@@ -13,6 +13,7 @@ const ManPowerUpdate = () => {
   const { singleManPowerDataApi, singleManPowerData, manpowerUpdateApi, manpowerGetAllDataApi } = manPowerStore();
 
   const { img: incomingImg } = singleManPowerData;
+  const { qr_code_img: incomingQRImg } = singleManPowerData;
 
   const { id } = useParams();
   useEffect(() => {
@@ -21,7 +22,7 @@ const ManPowerUpdate = () => {
     })()
   }, []);
 
-  console.log(singleManPowerData)
+  // console.log(singleManPowerData)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +45,7 @@ const ManPowerUpdate = () => {
     const passNo = e.target.passNo.value;
     const passIssueDate = e.target.passIssueDate.value;
     const passExpiryDate = e.target.passExpiryDate.value;
-    const qr_code_img = e.target.qr_code_img.files[0];
+    const qr_code = e.target.qr_code_img.files[0];
     const Father_Name = e.target.Father_Name.value;
     const Mother_Name = e.target.Mother_Name.value;
 
@@ -59,12 +60,14 @@ const ManPowerUpdate = () => {
       imgUrl = await uploadImage(img);
     }
 
-    let qrImgUrl = '';
-    if (qr_code_img?.name) {
-      qrImgUrl = '';
+    let qrImgUrl = incomingQRImg;
+    if (!qr_code?.name) {
+      qrImgUrl = incomingQRImg;
+    } else {
+      qrImgUrl = await uploadImage(qr_code);
     }
 
-    qrImgUrl = await uploadImage(qr_code_img);
+
 
 
     const payload = {
@@ -130,11 +133,7 @@ const ManPowerUpdate = () => {
 
             <p className="text-lg font-semibold mb-4">Personal Information</p>
 
-            <div className="avatar">
-              <div className="w-20 ml-72 ">
-                <img className='rounded-full' src={singleManPowerData?.img} />
-              </div>
-            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg">
 
               {/* Name */}
@@ -166,6 +165,12 @@ const ManPowerUpdate = () => {
                   name='img'
                   className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+                <div className="avatar">
+                  <p>Already Uploaded Image</p>
+                  <div className="w-12 mt-2 border rounded-2xl">
+                    <img src={singleManPowerData?.img} />
+                  </div>
+                </div>
               </div>
 
               {/* Passport Issue Date */}
@@ -273,7 +278,7 @@ const ManPowerUpdate = () => {
  */}
               <div>
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="clearanceDate">
-                  Clearance ID
+                  Clearance Date
                 </label>
                 <input
                   type="date"
@@ -521,6 +526,12 @@ const ManPowerUpdate = () => {
                   name='qr_code_img'
                   className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+                <div className="avatar">
+                  <p>Already Uploaded Image</p>
+                  <div className="w-12 border rounded-2xl">
+                    <img src={singleManPowerData?.qr_code_img} />
+                  </div>
+                </div>
               </div>
             </div>
             {/* Submit Button */}
