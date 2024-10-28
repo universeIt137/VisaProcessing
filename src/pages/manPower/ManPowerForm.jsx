@@ -10,6 +10,20 @@ const ManPowerForm = () => {
     e.preventDefault()
     const name = e.target.userName.value;
     const img = e.target.img.files[0];
+    const phone = e.target.phone.value;
+    const gender = e.target.gender.value;
+    const nid = e.target.nid.value;
+    const height = e.target.height.value;
+    const weight = e.target.weight.value;
+    const nationality = e.target.nationality.value;
+    const religion = e.target.religion.value;
+    const village = e.target.village.value;
+    const thana = e.target.thana.value;
+    const district = e.target.district.value;
+    const division = e.target.division.value;
+    const skill = e.target.skill.value;
+    const countries = e.target.countries.value;
+
     const dateOfBirth = e.target.dateOfBirth.value;
     const VisaNo = e.target.VisaNo.value;
     const BclearanceId = e.target.BclearanceId.value;
@@ -34,19 +48,32 @@ const ManPowerForm = () => {
     const payload = {
       name,
       img: project_imgUrl,
+      phone,
+      gender,
+      nid,
+      height,
+      weight,
+      nationality,
+      religion,
+      village,
+      thana,
+      district,
+      division,
+      skill,
+      countries,
       dateOfBirth,
       VisaNo,
-      
+
       BclearanceId,
       Bemployer,
       Bcountry,
       pCertificateNo,
       TTC,
       pIssueDate,
-      
+
       bmetNo,
       bmetIssueDate,
-      
+
       passNo,
       passIssueDate,
       passExpiryDate,
@@ -114,7 +141,192 @@ const ManPowerForm = () => {
               />
             </div>
 
-            
+            {/* Phone */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Phone
+              </label>
+              <input
+                type="text"
+                id="phone"
+                name='phone'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your Phone Number"
+              />
+            </div>
+
+            {/* Gender */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Gender
+              </label>
+              <input
+                type="text"
+                id="gender"
+                name='gender'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your Gender"
+              />
+            </div>
+
+            {/* NID */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                NID
+              </label>
+              <input
+                type="text"
+                id="nid"
+                name='nid'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your NID Number"
+              />
+            </div>
+
+            {/* Height */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Height
+              </label>
+              <input
+                type="text"
+                id="height"
+                name='height'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your height"
+              />
+            </div>
+
+            {/* Weight */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Weight
+              </label>
+              <input
+                type="text"
+                id="weight"
+                name='weight'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your weight"
+              />
+            </div>
+
+            {/* Nationality */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Nationality
+              </label>
+              <input
+                type="text"
+                id="nationality"
+                name='nationality'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your Nationality"
+              />
+            </div>
+
+            {/* Religion */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Religion
+              </label>
+              <input
+                type="text"
+                id="religion"
+                name='religion'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your Religion"
+              />
+            </div>
+
+            {/* Village */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Para/Area/Village
+              </label>
+              <input
+                type="text"
+                id="village"
+                name='village'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your Village"
+              />
+            </div>
+
+            {/* Thana */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Thana/Upazilla
+              </label>
+              <input
+                type="text"
+                id="thana"
+                name='thana'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your Thana"
+              />
+            </div>
+
+            {/* District */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                District
+              </label>
+              <input
+                type="text"
+                id="district"
+                name='district'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your District"
+              />
+            </div>
+
+            {/* Division */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Division
+              </label>
+              <input
+                type="text"
+                id="division"
+                name='division'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Your Division"
+              />
+            </div>
+
+            {/* Interested Skills */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Interested Skills
+              </label>
+              <input
+                type="text"
+                id="skill"
+                name='skill'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Interested Skills"
+              />
+            </div>
+
+            {/* Interested Countries */}
+            <div>
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Interested Countries
+              </label>
+              <input
+                type="text"
+                id="countries"
+                name='countries'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Interested Countries"
+              />
+            </div>
+
+
+
+
+
 
             {/* Date Of Birth */}
             <div   >
@@ -185,6 +397,8 @@ const ManPowerForm = () => {
               />
             </div>
 
+
+
           </div>
 
 
@@ -207,9 +421,9 @@ const ManPowerForm = () => {
               />
             </div>
 
-            
 
-            
+
+
 
             {/* Employer */}
             <div>
@@ -273,7 +487,7 @@ const ManPowerForm = () => {
               />
             </div>
 
-            
+
 
             {/* TTC */}
             <div>
@@ -323,7 +537,7 @@ const ManPowerForm = () => {
               />
             </div>
 
-            
+
             {/* Issue Date */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bmetIssueDate">
@@ -343,7 +557,7 @@ const ManPowerForm = () => {
           <p className="text-lg font-semibold mb-4 mt-6">Passport Information</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 border p-2 rounded-lg ">
-            
+
 
             {/* Passport No */}
             <div>
