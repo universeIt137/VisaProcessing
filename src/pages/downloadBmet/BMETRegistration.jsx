@@ -9,7 +9,7 @@ const BMETRegistration = () => {
   }
   return (
     <>
-          <div className="bg-[#F1FAF7] lg:p-8 flex flex-col-reverse md:flex-row gap-6 px-2 lg:w-10/12 mx-auto">
+      <div className="bg-[#F1FAF7] lg:p-8 flex flex-col-reverse md:flex-row gap-6 px-2 lg:w-10/12 mx-auto">
       {/* Instruction Section */}
       <div className="lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-xl font-semibold text-gray-800">Instruction</h2>
@@ -80,6 +80,7 @@ const BMETRegistration = () => {
           </div>
         </form>
       </div>
+      
     </div>
     <BmetDownloadInformation></BmetDownloadInformation>
     </>
