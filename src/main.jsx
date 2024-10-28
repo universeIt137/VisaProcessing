@@ -28,6 +28,7 @@ import Login from './pages/authentication/login/Login.jsx';
 import Register from './pages/authentication/register/Register.jsx';
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
 import DownloadBmet from './pages/downloadBmet/DownloadBmet.jsx';
+import BMETInfoCard from './pages/smartCard/BMETInfoCard.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/download-bmet",
         element: <DownloadBmet></DownloadBmet>
+      },
+      {
+        path: "/digital/:id",
+        element: <BMETInfoCard></BMETInfoCard>
       }
     ]
 
