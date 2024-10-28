@@ -90,6 +90,8 @@ const ManPowerUpdate = () => {
       Bmet_clearance
     };
 
+    console.log(payload);
+
     const resp = await updateAlert();
 
     if (resp.isConfirmed) {
@@ -353,8 +355,8 @@ const ManPowerUpdate = () => {
                 <input
                   type="text"
                   id="TTC"
-                  name='TTCValue'
-                  defaultValue={singleManPowerData?.TTCValue}
+                  name='TTC'
+                  defaultValue={singleManPowerData?.TTC}
                   key={Date.now()}
                   className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Enter TTC"

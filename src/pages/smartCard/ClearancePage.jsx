@@ -119,7 +119,7 @@ const ClearancePage = () => {
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3 py-1">
                                 <span className='text-[#666687]'>TTC</span>
-                                <span className="font-semibold text-[#666687]"> { singleManPowerData?.TTCValue }</span>
+                                <span className="font-semibold text-[#666687]"> { singleManPowerData?.TTC }</span>
                             </div>
                             <div className="flex justify-between border-b  border-gray-200 lg:py-3 py-1">
                                 <span className='text-[#666687]'>Issue Date</span>

@@ -16,7 +16,7 @@ const ManPowerForm = () => {
     const Bemployer = e.target.Bemployer.value;
     const Bcountry = e.target.Bcountry.value;
     const pCertificateNo = e.target.pCertificateNo.value;
-    const TTCValue = e.target.TTCValue.value;
+    const TTC = e.target.TTCValue.value;
     const pIssueDate = e.target.pIssueDate.value;
     const bmetNo = e.target.bmetNo.value;
     const bmetIssueDate = e.target.bmetIssueDate.value;
@@ -41,7 +41,7 @@ const ManPowerForm = () => {
       Bemployer,
       Bcountry,
       pCertificateNo,
-      TTCValue,
+      TTC,
       pIssueDate,
       
       bmetNo,

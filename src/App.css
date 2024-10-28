@@ -1,1 +1,9 @@
-    
+@media print {
+    /* Target the header background color */
+    #pdf-content .card-head {
+      background-color: #1a7a86 !important; /* Ensure the color applies in print */
+      color: white !important; /* Ensure text color is also visible */
+    }
+  
+    /* Any other elements that need specific print styles */
+  }
