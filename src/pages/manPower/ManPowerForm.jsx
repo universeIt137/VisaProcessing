@@ -10,26 +10,23 @@ const ManPowerForm = () => {
     e.preventDefault()
     const name = e.target.userName.value;
     const img = e.target.img.files[0];
-    const passportDate = e.target.passportDate.value;
     const dateOfBirth = e.target.dateOfBirth.value;
     const VisaNo = e.target.VisaNo.value;
     const BclearanceId = e.target.BclearanceId.value;
-    const BvisaNo = e.target.BvisaNo.value;
     const Bemployer = e.target.Bemployer.value;
     const Bcountry = e.target.Bcountry.value;
     const pCertificateNo = e.target.pCertificateNo.value;
-    const pdoCountry = e.target.pdoCountry.value;
-    const TTCValue = e.target.TTCValue.value;
+    const TTC = e.target.TTCValue.value;
     const pIssueDate = e.target.pIssueDate.value;
     const bmetNo = e.target.bmetNo.value;
-    const userBirthDate = e.target.userBirthDate.value;
     const bmetIssueDate = e.target.bmetIssueDate.value;
     const passNo = e.target.passNo.value;
     const passIssueDate = e.target.passIssueDate.value;
     const passExpiryDate = e.target.passExpiryDate.value;
     const Mother_Name = e.target.Mother_Name.value;
     const Father_Name = e.target.Father_Name.value;
-    const Clearance_Date = e.target.Clearance_Date.value;
+    const Job_Type = e.target.job_type.value;
+    const Bmet_clearance = e.target.Bmet_clearance.value;
 
     let project_imgUrl = '';
     if (img?.name) project_imgUrl = await uploadImage(img);
@@ -37,21 +34,17 @@ const ManPowerForm = () => {
     const payload = {
       name,
       img: project_imgUrl,
-      passportDate,
       dateOfBirth,
       VisaNo,
       
       BclearanceId,
-      BvisaNo,
       Bemployer,
       Bcountry,
       pCertificateNo,
-      pdoCountry,
-      TTCValue,
+      TTC,
       pIssueDate,
       
       bmetNo,
-      userBirthDate,
       bmetIssueDate,
       
       passNo,
@@ -59,7 +52,8 @@ const ManPowerForm = () => {
       passExpiryDate,
       Father_Name,
       Mother_Name,
-      Clearance_Date
+      Job_Type,
+      Bmet_clearance
     };
 
 
@@ -120,18 +114,7 @@ const ManPowerForm = () => {
               />
             </div>
 
-            {/* Passport Issue Date */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Passport_No">
-                Passport Issue Date
-              </label>
-              <input
-                type="date"
-                id="PassportDate"
-                name='passportDate'
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            
 
             {/* Date Of Birth */}
             <div   >
@@ -174,7 +157,7 @@ const ManPowerForm = () => {
               />
             </div>
 
-            {/* Father name  */}
+            {/* Mother name  */}
             <div  >
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
                 Mother Name
@@ -185,6 +168,20 @@ const ManPowerForm = () => {
                 name='Mother_Name'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter Mother Name"
+              />
+            </div>
+
+            {/* Job Type  */}
+            <div  >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="father-name">
+                Job Type
+              </label>
+              <input
+                type="text"
+                id="job-type"
+                name='job_type'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Enter Job Type"
               />
             </div>
 
@@ -210,38 +207,14 @@ const ManPowerForm = () => {
               />
             </div>
 
-            {/* Clearance Date */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="clearanceDate">
-                Clearance Date
-              </label>
-              <input
-                type="date"
-                id="clearanceDate"
-                name='Clearance_Date'
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Clearance ID"
-              />
-            </div>
+            
 
-            {/* Visa No */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="visaNo">
-                Visa No
-              </label>
-              <input
-                type="text"
-                id="visaNo"
-                name='BvisaNo'
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Visa Number"
-              />
-            </div>
+            
 
             {/* Employer */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="employer">
-                Job Title
+                Employer
               </label>
               <input
                 type="text"
@@ -265,6 +238,19 @@ const ManPowerForm = () => {
                 placeholder="Enter Country"
               />
             </div>
+
+            {/* Clearance Date */}
+            <div   >
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="Date_Of_Birth">
+                BMET Smart Card Clearance Date
+              </label>
+              <input
+                type="date"
+                id="Bmet_clearance"
+                name='Bmet_clearance'
+                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
 
           {/* PDO Certificate Information */}
@@ -279,7 +265,7 @@ const ManPowerForm = () => {
                 Certificate No
               </label>
               <input
-                type="number"
+                type="text"
                 id="certificateNo"
                 name='pCertificateNo'
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -287,24 +273,12 @@ const ManPowerForm = () => {
               />
             </div>
 
-            {/* Country */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="pdoCountry">
-                Country
-              </label>
-              <input
-                type="text"
-                id="pdoCountry"
-                name='pdoCountry'
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Enter Country"
-              />
-            </div>
+            
 
             {/* TTC */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="TTC">
-                TTC
+                TTC Name
               </label>
               <input
                 type="text"
@@ -349,23 +323,11 @@ const ManPowerForm = () => {
               />
             </div>
 
-            {/* Birth Date */}
-            <div>
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="birthDate">
-                Birth Date
-              </label>
-              <input
-                type="date"
-                id="birthDate"
-                name='userBirthDate'
-                className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-
+            
             {/* Issue Date */}
             <div>
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bmetIssueDate">
-                Issue Date
+                BMET Issue Date
               </label>
               <input
                 type="date"

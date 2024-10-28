@@ -3,6 +3,7 @@ import DataForm from './DataForm';
 import VisaTable from './VisaTable';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
+import Navbar from '../../components/navbar/Navbar';
 
 const FormPage = () => {
     const axiosPublic = useAxiosPublic();
@@ -16,13 +17,15 @@ const FormPage = () => {
         }
     })
     return (
-        <div className='lg:w-3/4 mx-auto  min-h-screen'>
-            
-            <DataForm refetch={refetch}></DataForm>
-            <div className="mt-10 mb-40">
-                <VisaTable nominees={nominees} refetch={refetch}></VisaTable>
+        <>
+            <Navbar></Navbar>
+            <div className='lg:w-3/4 mx-auto  min-h-screen'>
+                <DataForm refetch={refetch}></DataForm>
+                <div className="mt-10 mb-40">
+                    <VisaTable nominees={nominees} refetch={refetch}></VisaTable>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
