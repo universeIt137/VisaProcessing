@@ -23,6 +23,11 @@ import ManPower from './pages/manPower/ManPower.jsx';
 import BMETcard from './pages/smartCard/BMETcard.jsx';
 import ManPowerUpdate from './pages/manPower/ManPowerUpdate.jsx';
 import ClearancePage from './pages/smartCard/ClearancePage.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
+import Login from './pages/authentication/login/Login.jsx';
+import Register from './pages/authentication/register/Register.jsx';
+import PrivateRoutes from './routes/PrivateRoutes.jsx';
+import DownloadBmet from './pages/downloadBmet/DownloadBmet.jsx';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -32,7 +37,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage></HomePage>
+        element: <PrivateRoutes><HomePage></HomePage></PrivateRoutes>
       },
       {
         path: "/bmet-card/:id",
@@ -44,11 +49,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/visa-processing",
-        element: <FormPage></FormPage>,
+        element: <PrivateRoutes><FormPage></FormPage></PrivateRoutes>,
       },
       {
         path: "/man-power",
-        element: <ManPower></ManPower>
+        element: <PrivateRoutes><ManPower></ManPower></PrivateRoutes>
       },
       {
         path: "/form-Details/:id",
@@ -56,11 +61,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/nominee-update/:id",
-        element: <UpdateNominee></UpdateNominee>
+        element: <PrivateRoutes><UpdateNominee></UpdateNominee></PrivateRoutes>
       },
       {
-        path : "/man-power/update/:id",
-        element : <ManPowerUpdate></ManPowerUpdate>
+        path: "/man-power/update/:id",
+        element: <PrivateRoutes><ManPowerUpdate></ManPowerUpdate></PrivateRoutes>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      },
+      {
+        path: "/download-bmet",
+        element: <DownloadBmet></DownloadBmet>
       }
     ]
 
@@ -72,7 +89,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={queryClient} >
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </QueryClientProvider>
   </StrictMode>,
 )

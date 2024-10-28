@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const { pathname } = useLocation();
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(result => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Logout successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     return (
         <div>
@@ -67,6 +85,39 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
+
+                {
+                    user ?
+                        <div className="dropdown dropdown-end hidden lg:block">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 border rounded-full text-white flex justify-center items-center">
+                                    <p className='mt-1 text-2xl'>A</p>
+                                </div>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm text-black dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+
+                                <li onClick={handleLogOut}><a>Logout</a></li>
+                            </ul>
+                        </div>
+                        :
+                        <div className="font-bold text-[14px] gap-3">
+                            <Link
+                                to="/login"
+                                className={`${pathname === '/visa-processing' ? 'underline' : ''} text-white`}
+                            >
+                                Login
+                            </Link>
+                            <Link
+                                to="/register"
+                                className={`${pathname === '/man-power' ? 'underline' : ''} text-white`}
+                            >
+                                Register
+                            </Link>
+                        </div>
+
+                }
             </div>
         </div>
     );
