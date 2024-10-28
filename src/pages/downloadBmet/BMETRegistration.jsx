@@ -1,8 +1,15 @@
 import React from "react";
+import BmetDownloadInformation from "./BmetDownloadInformation";
 
 const BMETRegistration = () => {
+  const getPassportValue = async (e)=>{
+    e.preventDefault();
+    const passportNumber = e.target.passportNumber.value;
+    console.log(passportNumber)
+  }
   return (
-    <div className="bg-[#F1FAF7] lg:p-8 flex flex-col-reverse md:flex-row gap-6 px-2 lg:w-10/12 mx-auto">
+    <>
+      <div className="bg-[#F1FAF7] lg:p-8 flex flex-col-reverse md:flex-row gap-6 px-2 lg:w-10/12 mx-auto">
       {/* Instruction Section */}
       <div className="lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-xl font-semibold text-gray-800">Instruction</h2>
@@ -36,13 +43,14 @@ const BMETRegistration = () => {
       <div className="lg:flex-1 bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-[24px] font-semibold text-gray-800">BMET Registration Card</h2>
         <hr className="my-3 border-gray-200" />
-        <form action="">
+        <form onSubmit = {getPassportValue} action="">
           <div className="space-y-4">
             <div>
               <label className="block text-gray-700 font-bold mb-2">Passport Number</label>
               <input
                 type="text"
                 placeholder="Enter your passport number"
+                name = "passportNumber"
                 className="w-full border border-gray-300 rounded-lg p-4 focus:outline-none focus:border-blue-500"
               />
             </div>
@@ -72,8 +80,10 @@ const BMETRegistration = () => {
           </div>
         </form>
       </div>
-
+      
     </div>
+    <BmetDownloadInformation></BmetDownloadInformation>
+    </>
   );
 };
 

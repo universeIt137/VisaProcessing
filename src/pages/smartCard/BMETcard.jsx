@@ -128,11 +128,7 @@ const BMETcard = () => {
                     <p className='text-[12px]'>{`www.amiprobashi.com -> Click 'verify BMET smart card' -> Enter`}</p>
                     <p className='text-[12px]'>{`passport no. -> Search & Verify your card.`}</p>
                     <p className='text-[12px] mt-5 mb-5'>{`This card holder is under insurance coverage & welfare services.`}</p>
-
-                    
                 </div>
-
-
             </div>
         </div>
     );
