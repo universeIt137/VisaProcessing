@@ -145,7 +145,7 @@ const ManPowerUpdate = () => {
               <input
                 type="text"
                 id="name"
-                name='userName'
+                name='name'
                 defaultValue={singleManPowerData?.name}
                 key={Date.now()}
                 className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
