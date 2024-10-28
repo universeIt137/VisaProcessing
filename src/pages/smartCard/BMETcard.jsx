@@ -122,10 +122,10 @@ const BMETcard = () => {
                 <div className="w-1/2 mx-auto mt-6">
                     <img src={singleManPowerData?.qr_code_img} alt="" />
                 </div>
-                <div className="text-center text-green-700">
+                <div className="text-center text-black">
                     <p className='font-bold '>Verify this card</p>
-                    <p className='text-[12px]'>{`Ami Probashi App >> Click 'verify documents'>> Scan QR code`}</p>
-                    <p className='text-[12px]'>{`www.amiprobashi.com -> Click 'verify BMET smart card' -> Enter`}</p>
+                    <p className='text-[12px]'><span className="text-[#296b30] font-bold">Ami Probashi App</span>{` >> Click 'verify documents'>> Scan QR code`}</p>
+                    <p className='text-[12px]'><span className="text-[#296b30] font-bold">www.amiprobashi.me</span>{` -> Click 'verify BMET smart card' -> Enter`}</p>
                     <p className='text-[12px]'>{`passport no. -> Search & Verify your card.`}</p>
                     <p className='text-[12px] mt-5 mb-5'>{`This card holder is under insurance coverage & welfare services.`}</p>
                 </div>

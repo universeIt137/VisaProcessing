@@ -19,6 +19,9 @@ const HomePage = () => {
                         <div className="">
                             <Link to={`/man-power`}><button className="btn w-full"><IoMan size={20} />Man Power</button></Link>
                         </div>
+                        <div className="">
+                            <Link to={`/download-bmet.html`}><button className="btn w-full"><IoMan size={20} />Download BMET</button></Link>
+                        </div>
 
                     </div>
                 </div>

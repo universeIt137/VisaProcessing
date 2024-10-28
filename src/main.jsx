@@ -29,6 +29,7 @@ import Register from './pages/authentication/register/Register.jsx';
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
 import DownloadBmet from './pages/downloadBmet/DownloadBmet.jsx';
 import BMETInfoCard from './pages/smartCard/BMETInfoCard.jsx';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path: "/download-bmet",
+        path: "/download-bmet.html",
         element: <DownloadBmet></DownloadBmet>
       },
       {
@@ -93,10 +94,12 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient} >
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient} >
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
   </StrictMode>,
 )
