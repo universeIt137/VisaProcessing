@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BmetDownloadInformation from "./BmetDownloadInformation";
+import manPowerStore from "../../api-request/manPowerApi";
 
 const BMETRegistration = () => {
+  
+  const { manpowerGetAllData, manpowerGetAllDataApi } = manPowerStore();
+  useEffect(() => {
+      (async () => {
+          await manpowerGetAllDataApi();
+      })()
+  }, [])
+  let singleData;
   const getPassportValue = async (e)=>{
     e.preventDefault();
     const passportNumber = e.target.passportNumber.value;
-    console.log(passportNumber)
+    singleData = manpowerGetAllData.find(record => record.passNo === passportNumber);
   }
+  console.log(singleData)
+
   return (
     <>
       <div className="bg-[#F1FAF7] lg:p-8 flex flex-col-reverse md:flex-row gap-6 px-2 lg:w-10/12 mx-auto">

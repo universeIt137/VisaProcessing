@@ -9,13 +9,10 @@ import { MdOutlineZoomOut, MdOutlineZoomOutMap } from 'react-icons/md';
 import { ImZoomIn, ImZoomOut } from 'react-icons/im';
 
 const BmetDownloadInformation = () => {
-    const { singleManPowerDataApi, singleManPowerData } = manPowerStore();
-    const { id } = useParams();
-    useEffect(() => {
-        (async () => {
-            await singleManPowerDataApi(id);
-        })()
-    }, [id])
+   
+
+       
+
 
     const handlePrint = () => {
         window.print(); // This triggers the browser's print dialog
@@ -23,7 +20,7 @@ const BmetDownloadInformation = () => {
     return (
 
         <div className='lg:px-28 lg:py-10  ' >
-            <div className='flex justify-between border border-black items-center bg-[#eeeeee] py-4 ' >
+            <div className='flex justify-between border border-black items-center px-4 bg-[#eeeeee] py-4 ' >
                     <div className="search">
                         <div className='flex items-center text-xl text-[#B1B1B1] gap-10 ' >
                             <span className=' ' > <IoIosSearch /> </span>
@@ -38,11 +35,21 @@ const BmetDownloadInformation = () => {
                         <span>  <ImZoomOut /> </span>
                         <span> <ImZoomIn /></span>
                     </div>
-                    <div className="flex items-center ">
+                    <div className="flex items-center gap-5 ">
                         
-                        <button className='' ><img className='w-6' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730101021/gfnxeurpjs0lvvg1hmrr.png" alt="" /></button>
+                        <button className='' ><img className='w-8' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730101021/gfnxeurpjs0lvvg1hmrr.png" alt="" /></button>
                         <button>
-                            <img className='w-6' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730103129/uneqmilz9rnhqdbfbpe6.webp" alt="" />
+                            <img className='w-8' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730103129/uneqmilz9rnhqdbfbpe6.webp" alt="" />
+                        </button>
+                        <button>
+                            <img className='w-8' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730103421/mwz4arvsyrlkkcz7nmqs.webp" alt="" />
+
+                        </button>
+                        <button>
+                            <img className='w-8' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730103575/Other%20data/fnrghebzuo9yffoaxubx.webp" alt="" />
+                        </button>
+                        <button>
+                            <img className='w-8' src="https://res.cloudinary.com/dnvmj9pvk/image/upload/v1730098186/Other%20data/qa9qsq0sngj15fkdfdso.png" alt="" />
                         </button>
                     </div>
             </div>
