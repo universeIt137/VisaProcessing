@@ -8,12 +8,13 @@ import { SiNginxproxymanager } from 'react-icons/si';
 import Swal from 'sweetalert2';
 
 const ManPowerUpdate = () => {
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
   const [loader, setLoader] = useState(false);
   const { singleManPowerDataApi, singleManPowerData, manpowerUpdateApi, manpowerGetAllDataApi } = manPowerStore();
 
   const { img: incomingImg } = singleManPowerData;
   const { qr_code_img: incomingQRImg } = singleManPowerData;
+  const { qr_code_probasi: incomingProbasiQRImg } = singleManPowerData;
 
   const { id } = useParams();
   useEffect(() => {
@@ -28,6 +29,21 @@ const ManPowerUpdate = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const img = e.target.img.files[0];
+
+    const phone = e.target.phone.value;
+    const gender = e.target.gender.value;
+    const nid = e.target.nid.value;
+    const height = e.target.height.value;
+    const weight = e.target.weight.value;
+    const nationality = e.target.nationality.value;
+    const religion = e.target.religion.value;
+    const village = e.target.village.value;
+    const thana = e.target.thana.value;
+    const district = e.target.district.value;
+    const division = e.target.division.value;
+    const skill = e.target.skill.value;
+    const countries = e.target.countries.value;
+
     const dateOfBirth = e.target.dateOfBirth.value;
     const VisaNo = e.target.VisaNo.value;
     const BclearanceId = e.target.BclearanceId.value;
@@ -42,6 +58,7 @@ const ManPowerUpdate = () => {
     const passIssueDate = e.target.passIssueDate.value;
     const passExpiryDate = e.target.passExpiryDate.value;
     const qr_code = e.target.qr_code_img.files[0];
+    const qr_code_probasi = e.target.qr_code_probasi.files[0];
     const Father_Name = e.target.Father_Name.value;
     const Mother_Name = e.target.Mother_Name.value;
     const Job_Type = e.target.job_type.value;
@@ -64,12 +81,33 @@ const ManPowerUpdate = () => {
       qrImgUrl = await uploadImage(qr_code);
     }
 
+    let probasiImgUrl = incomingProbasiQRImg;
+    if (!qr_code_probasi?.name) {
+      probasiImgUrl = incomingProbasiQRImg;
+    } else {
+      probasiImgUrl = await uploadImage(qr_code_probasi);
+    }
 
 
 
     const payload = {
       name,
       img: imgUrl,
+
+      phone,
+      gender,
+      nid,
+      height,
+      weight,
+      nationality,
+      religion,
+      village,
+      thana,
+      district,
+      division,
+      skill,
+      countries,
+
       dateOfBirth,
       VisaNo,
       BclearanceId,
@@ -84,6 +122,7 @@ const ManPowerUpdate = () => {
       passIssueDate,
       passExpiryDate,
       qr_code_img: qrImgUrl,
+      qr_code_probasi: probasiImgUrl,
       Father_Name,
       Mother_Name,
       Job_Type,
@@ -168,6 +207,204 @@ const ManPowerUpdate = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Phone */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Phone
+                </label>
+                <input
+                  type="text"
+                  id="phone"
+                  name='phone'
+                  defaultValue={singleManPowerData?.phone}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your Phone Number"
+                />
+              </div>
+
+              {/* Gender */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Gender
+                </label>
+                <input
+                  type="text"
+                  id="gender"
+                  name='gender'
+                  defaultValue={singleManPowerData?.gender}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your Gender"
+                />
+              </div>
+
+              {/* NID */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  NID
+                </label>
+                <input
+                  type="text"
+                  id="nid"
+                  name='nid'
+                  defaultValue={singleManPowerData?.nid}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your NID Number"
+                />
+              </div>
+
+              {/* Height */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Height
+                </label>
+                <input
+                  type="text"
+                  id="height"
+                  name='height'
+                  defaultValue={singleManPowerData?.height}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your height"
+                />
+              </div>
+
+              {/* Weight */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Weight
+                </label>
+                <input
+                  type="text"
+                  id="weight"
+                  name='weight'
+                  defaultValue={singleManPowerData?.weight}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your weight"
+                />
+              </div>
+
+
+              {/* Nationality */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Nationality
+                </label>
+                <input
+                  type="text"
+                  id="nationality"
+                  name='nationality'
+                  defaultValue={singleManPowerData?.nationality}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your Nationality"
+                />
+              </div>
+
+              {/* Religion */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Religion
+                </label>
+                <input
+                  type="text"
+                  id="religion"
+                  name='religion'
+                  defaultValue={singleManPowerData?.religion}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your Religion"
+                />
+              </div>
+
+              {/* Village */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Para/Area/Village
+                </label>
+                <input
+                  type="text"
+                  id="village"
+                  name='village'
+                  defaultValue={singleManPowerData?.village}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your Village"
+                />
+              </div>
+
+              {/* Thana */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Thana/Upazilla
+                </label>
+                <input
+                  type="text"
+                  id="thana"
+                  name='thana'
+                  defaultValue={singleManPowerData?.thana}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your Thana"
+                />
+              </div>
+
+              {/* District */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  District
+                </label>
+                <input
+                  type="text"
+                  id="district"
+                  name='district'
+                  defaultValue={singleManPowerData?.district}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your District"
+                />
+              </div>
+
+              {/* Division */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Division
+                </label>
+                <input
+                  type="text"
+                  id="division"
+                  name='division'
+                  defaultValue={singleManPowerData?.division}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Your Division"
+                />
+              </div>
+
+              {/* Interested Skills */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Interested Skills
+                </label>
+                <input
+                  type="text"
+                  id="skill"
+                  name='skill'
+                  defaultValue={singleManPowerData?.skill}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Interested Skills"
+                />
+              </div>
+
+              {/* Interested Countries */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                  Interested Countries
+                </label>
+                <input
+                  type="text"
+                  id="countries"
+                  name='countries'
+                  defaultValue={singleManPowerData?.countries}
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter Interested Countries"
+                />
+              </div>
+
+
 
 
 
@@ -474,7 +711,7 @@ const ManPowerUpdate = () => {
               {/* upload qr img */}
               <div>
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="qr-code-img">
-                  Upload QR Code Image
+                  Upload BMET Smart Card's QR Code Image
                 </label>
                 <input
                   type="file"
@@ -486,6 +723,26 @@ const ManPowerUpdate = () => {
                   <p>Already Uploaded Image</p>
                   <div className="w-12 border rounded-2xl">
                     <img src={singleManPowerData?.qr_code_img} />
+                  </div>
+                </div>
+              </div>
+
+
+              {/* upload qr img */}
+              <div>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="qr-code-img">
+                  Upload BMET Registration QR Code (Ami probasi)
+                </label>
+                <input
+                  type="file"
+                  id="qr-code-img"
+                  name='qr_code_probasi'
+                  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <div className="avatar">
+                  <p>Already Uploaded Image</p>
+                  <div className="w-12 border rounded-2xl">
+                    <img src={singleManPowerData?.qr_code_probasi} />
                   </div>
                 </div>
               </div>
