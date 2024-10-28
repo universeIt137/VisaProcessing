@@ -64,6 +64,12 @@ const ManPowerTable = () => {
                           BMET Card
                         </Link>
                         <Link
+                          to={`/digital/${item._id}`}
+                          className="bg-blue-600 text-white text-xs md:text-sm px-2 py-1 rounded-md hover:bg-blue-700"
+                        >
+                          BMET Digital Card
+                        </Link>
+                        <Link
                           to={`/bmet-clearance/${item?._id}`}
                           className="bg-green-600 text-white text-xs md:text-sm px-2 py-1 rounded-md hover:bg-green-700"
                         >
